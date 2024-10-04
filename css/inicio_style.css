@@ -30,6 +30,7 @@ body {
     position: fixed;
     top: 0;
     padding: 10px 0; 
+    height: 60px;
 }
 
 #logo {
