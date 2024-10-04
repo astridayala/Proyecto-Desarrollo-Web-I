@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/Intento.css">
+    <link rel="stylesheet" href="./css/inicio_style.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
     <title>Cupon Mania</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <p id="logo"><img src="./img/Logo.jpg" alt="Logo"></p>
+    <header class="container">
+            <a href="index.html" class="dnl"><img src="./img/Logo.jpg" alt="Logo" id="logo"></a>
             <div id="menu">
                 <ul id="items">
                     <li><a href="#">Comida</a></li>
@@ -18,22 +18,16 @@
                     <li><a href="#">Salud</a></li>
                     <li><a href="#">Things</a></li>
                     <li><a href="#">Destacados</a></li>
-                    <li><a href="#">¿Cómo funciona?</a></li>
+                    <li><a href="howworks.html">¿Cómo funciona?</a></li>
                 </ul>
             </div>
-        </div>   
     </header>
     <section>
         <nav class="sect">
-            <article class="barra">
-                <section class="barrita">
-                    <h2>Destacados</h2>
-                </section>
-            </article>
-            <article class="cajas">
-                <div></div>
-                <div></div>
-                <div></div>
+            <article class="cont">
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
             </article>
         </nav>
         <nav class="sect">
@@ -42,10 +36,10 @@
                     <h2>Comida</h2>
                 </section>
             </article>
-            <article class="cajas">
-                <div></div>
-                <div></div>
-                <div></div>
+            <article class="cont">
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
             </article>
         </nav>
         <nav class="sect">
@@ -54,10 +48,10 @@
                     <h2>Viajes</h2>
                 </section>
             </article>
-            <article class="cajas">
-                <div></div>
-                <div></div>
-                <div></div>
+            <article class="cont">
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
             </article>
         </nav>
         <nav class="sect">
@@ -66,10 +60,10 @@
                     <h2>Belleza</h2>
                 </section>
             </article>
-            <article class="cajas">
-                <div></div>
-                <div></div>
-                <div></div>
+            <article class="cont">
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
             </article>
         </nav>
         <nav class="sect">
@@ -78,10 +72,10 @@
                     <h2>Salud</h2>
                 </section>
             </article>
-            <article class="cajas">
-                <div></div>
-                <div></div>
-                <div></div>
+            <article class="cont">
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
             </article>
         </nav>
         <nav class="sect">
@@ -90,18 +84,23 @@
                     <h2>Things</h2>
                 </section>
             </article>
-            <article class="cajas">
-                <div></div>
-                <div></div>
-                <div></div>
+            <article class="cont">
+                <div class="caja"></div>
+                <div class="caja"></div>
+                <div class="caja"></div>
             </article>
         </nav>
                <nav class="sect">
             <article class="barra">
                 <section class="barrita">
-                    <h2>¿Cómo funciona?</h2>
+                    <h2><a href="howworks.html">¿Cómo funciona?</a></h2>
                 </section>
             </article>
+
+            <form id="buscador" action="buscar.html" method="GET">
+                <input type="text" name="q" placeholder="Buscar...">
+                <button type="submit">Buscar</button>
+            </form>
     </section>
     <footer>
         <h3>Cupon Mania S.A. de C.V.</h3>
