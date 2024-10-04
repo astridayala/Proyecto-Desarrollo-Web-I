@@ -1,34 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     font-family: 'Lilita One', sans-serif;
-    background-color: #ffffff;
 }
 
 body {
-    padding-top: 100px; 
+    padding-top: 70px;
 }
 
 :root {
     --color1: #e36414;
     --color2: #0f4c5c;
     --color3: #ffffff;
+    --color4: #5f0f40;
+    --color5: #9a031e;
+    --color6: #c3530e;
+    --color7: #ae551d;
+    --color8: #a3a2a2;
+    --color9: #000;
 }
 
 .container {
     width: 100%;
     background-color: var(--color1);
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    align-items: center; 
     position: fixed;
     top: 0;
-    z-index: 100; 
+    padding: 10px 0; 
 }
 
 #logo {
     height: 70px;
     width: 100%;
+    display: block; 
+}
+
+#menu {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%; 
+}
+
+#items {
+    display: flex;
+    list-style: none;
+}
+
+#items li {
+    text-align: center;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px; 
+    justify-content: center;
+}
+
+#icons {
+    color: #fff;
+    align-self: center;
+}
+
+#Busqueda {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    width: 30.3%;
+    height: 35px;
+    border: 2px #fff solid;
+    margin: 20px 0px 5px 0px; 
+    border-radius: 20px;
+    background-color: var(--color1); 
+}
+
+#Busqueda i {
+    margin-right: 8px; 
+}
+
+#Busqueda a {
+    color: var(--color3);
+    text-decoration: none;
+}
+
+#items div a {
+    width: 0px 10px 0px 10px;
+    color: var(--color3);
+    text-decoration: none;
+}
+
+li > a {
+    color: var(--color3);
+    text-decoration: none;
+}
+
+#items li:hover {
+    background: #ff7c2a;
+}
+
+.sect {
+    margin: 0 auto;
+}
+
+.sect .barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color2);
+    padding: 0px 0px 0px 0px;
+}
+
+.sect h2 {
+    color: white;
+}
+
+.sect .barrita {
+    background-color: var(--color1);
+    border-radius: 12px;
+    padding: 10px 40px 10px 40px;
+    width: 300px;
+    text-align: center;
+    height: 100%;
+}
+
+.cont {
+    width: 1300px 50px;
+    margin: 70px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    justify-content: space-between;
+}
+
+.cont .caja {
+    width: 30.3%;
+    height: 200px;
+    border: 2px #000 solid;
+    margin: 5px 0.5%;
+    border-radius: 12px;
+}
+
+footer {
+    background-color: var(--color2);
+    color: var(--color3);
+    text-align: center;
+    font-size: 12px;
+}
+
+
+.menu-ham {
+    display: none; 
+}
+
+.menu-ham-checkbox {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    #logo {
+        width: 25%; 
+    }
+
+    #menu {
+        width: 75%;
+    }
+
+    #items li {
+        padding: 15px 10px; 
+    }
+
+    .cont {
+        width: 100%; 
+        justify-content: space-around;
+    }
+
+    .cont .caja {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    
+    #menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color1);
+        position: absolute;
+        top: 70px; 
+        left: 0;
+        z-index: 1000;
+    }
+
+    .menu-ham {
+        display: block;
+        background-color: var(--color1);
+        border: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+    }
+
+    .menu-ham-checkbox:checked + .menu-ham + #menu {
+        display: flex; 
+    }
+
+    #items {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #items li {
+        padding: 15px 0; 
+    }
+
+    #Busqueda {
+        margin-top: 20px;
+    }
+
+    #logo {
+        width: 50%; 
+    }
 }
 
 .titulo {
@@ -138,15 +334,3 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
