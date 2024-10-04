@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/inicio_style.css">
-    <link rel="icon" href="img/logo.png" type="image/x-icon">
-    <title>Cupon Mania</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
 </head>
 <body>
     <header class="container">
-            <a href="index.html"><img src="./img/Logo.jpg" alt="Logo" id="logo"></a>
-            <div id="menu">
-                <ul id="items">
-                    <li><a href="#">Comida</a></li>
-                    <li><a href="#">Belleza</a></li>
-                    <li><a href="#">Viajes</a></li>
-                    <li><a href="#">Salud</a></li>
-                    <li><a href="#">Things</a></li>
-                    <li><a href="#">Destacados</a></li>
-                    <li><a href="howworks.html">¿Cómo funciona?</a></li>
-                </ul>
-            </div>
+        <img src="./img/Logo.jpg" alt="Logo" id="logo">
+        
+        <input type="checkbox" id="menu-ham" class="menu-ham-checkbox" />
+        <label for="menu-ham" class="menu-ham">
+            <i class="fa fa-bars"></i> <!-- Ícono de menú (hamburguesa) -->
+        </label>
+
+        <nav id="menu">
+            <ul id="items">
+                <li><i class="fas fa-utensils" id="icons"></i><a href="#Comida">Comida</a></li>
+                <li><i class="fa-solid fa-spray-can-sparkles" id="icons"></i><a href="#Belleza">Belleza</a></li>
+                <li><i class="fa-solid fa-car-side" id="icons"></i><a href="#Viajes">Viajes</a></li>
+                <li><i class="fa-solid fa-stethoscope" id="icons"></i><a href="#Salud">Salud</a></li>
+                <li><i class="fa-solid fa-gift" id="icons"></i><a href="#Things">Things</a></li>
+                <li><i class="fa-solid fa-code-compare" id="icons"></i><a href="#Help">¿Cómo funciona?</a></li>
+                <div id="Busqueda"><i class="fa-solid fa-square-up-right" id="icons"></i><a href="#">Busqueda</a></div>
+                <li><i class="fa-solid fa-user" id="icons"></i><a href="#">Registrarse</a></li>
+            </ul>
+        </nav>
     </header>
+    
     <section>
         <nav class="sect">
             <article class="cont">
@@ -31,8 +39,8 @@
             </article>
         </nav>
         <nav class="sect">
-            <article class="barra">
-                <section class="barrita">
+            <article class="barra" >
+                <section class="barrita" id="Comida">
                     <h2>Comida</h2>
                 </section>
             </article>
@@ -43,8 +51,8 @@
             </article>
         </nav>
         <nav class="sect">
-            <article class="barra">
-                <section class="barrita">
+            <article class="barra" >
+                <section class="barrita" id="Viajes">
                     <h2>Viajes</h2>
                 </section>
             </article>
@@ -56,7 +64,7 @@
         </nav>
         <nav class="sect">
             <article class="barra">
-                <section class="barrita">
+                <section class="barrita" id="Belleza">
                     <h2>Belleza</h2>
                 </section>
             </article>
@@ -68,7 +76,7 @@
         </nav>
         <nav class="sect">
             <article class="barra">
-                <section class="barrita">
+                <section class="barrita" id="Salud">
                     <h2>Salud</h2>
                 </section>
             </article>
@@ -80,7 +88,7 @@
         </nav>
         <nav class="sect">
             <article class="barra">
-                <section class="barrita">
+                <section class="barrita" id="Things">
                     <h2>Things</h2>
                 </section>
             </article>
@@ -90,12 +98,13 @@
                 <div class="caja"></div>
             </article>
         </nav>
-               <nav class="sect">
+        <nav class="sect">
             <article class="barra">
                 <section class="barrita">
                     <h2><a href="howworks.html">¿Cómo funciona?</a></h2>
                 </section>
             </article>
+        </nav>
     </section>
     <footer>
         <h3>Cupon Mania S.A. de C.V.</h3>
