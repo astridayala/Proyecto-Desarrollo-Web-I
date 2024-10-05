@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 :root {
     --color1: #e36414;
     --color2: #0f4c5c;
@@ -73,6 +73,7 @@ h3, h4, h5{
     text-align: center;
 }
 h3{
+    padding-top: 5px;
     color: var(--color2);
     padding-bottom: 5px;
     font-size: 1.6em;
