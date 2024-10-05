@@ -44,3 +44,16 @@
     color: #16A085;
     margin: 10px 0;
 }
+
+.plan h4 {
+    font-size: 1em;
+    color: #E74C3C;
+    text-decoration: line-through;
+    margin: 5px 0;
+}
+
+.plan h5 {
+    font-size: 0.9em;
+    color: #34495E;
+    margin: 5px 0;
+}
