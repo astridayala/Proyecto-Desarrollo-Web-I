@@ -32,3 +32,15 @@
     display: block;
     margin-bottom: 10px;
 }
+
+.plan p {
+    font-size: 1em;
+    font-style: italic;
+    margin: 5px 0;
+}
+
+.plan h3 {
+    font-size: 1.2em;
+    color: #16A085;
+    margin: 10px 0;
+}
