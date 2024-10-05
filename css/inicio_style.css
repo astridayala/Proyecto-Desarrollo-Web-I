@@ -126,7 +126,7 @@ li > a {
     height: 100%;
 }
 
-.cont {
+/*.cont {
     width: 1300px 50px;
     margin: 70px 10px;
     display: flex;
@@ -141,7 +141,7 @@ li > a {
     border: 2px #000 solid;
     margin: 5px 0.5%;
     border-radius: 12px;
-}
+}*/
 
 footer {
     background-color: var(--color2);
