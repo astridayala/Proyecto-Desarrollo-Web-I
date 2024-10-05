@@ -71,7 +71,7 @@ body {
     width: 30.3%;
     height: 35px;
     border: 2px #fff solid;
-    margin: 20px 0px 5px 0px; 
+    margin: 20px 0px 40px 0px; 
     border-radius: 20px;
     background-color: var(--color1); 
     margin-top: 40px;
@@ -149,7 +149,6 @@ footer {
     text-align: center;
     font-size: 12px;
 }
-
 
 .menu-ham {
     display: none; 
