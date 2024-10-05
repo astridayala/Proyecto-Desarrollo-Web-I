@@ -3,18 +3,42 @@
     font-size: 2em;
 }
 
-.dnl {
+#dnl {
     text-align: center;
     margin-top: 70px;
 }
 
-.dnl h2 {
+#dnl h2 {
     font-size: 60px;
-    color: var(--color2); 
+    color: var(--color2);
+    text-align: center; 
 }
-.dnl p {
+#dnl p {
     margin: 20px 15px;
     font-size: 1.5rem;
 
 }
+
+#dnl .dnl-container{
+    text-align: center;
+}
+
+#dnl ul{
+    list-style: none;
+}
+
+#dnl li{
+    margin: 16px 0px;
+    font-size: 1.5rem;
+}
+
+#dnl a{
+    margin: 16px 0px;
+    font-size: 1.5rem;
+}
+footer{
+    text-align: center;
+    margin-top: 70px;
+}
+
 
