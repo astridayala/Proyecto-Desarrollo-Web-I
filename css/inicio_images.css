@@ -17,12 +17,12 @@
 }
 
 .plan {
-    width: 23%;
+    width: 45%;
     margin-bottom: 20px;
     padding-bottom: 1px;
     text-align: center;
     border: 1px solid #ddd;
-    padding: 40px;
+    padding: 10px;
     box-sizing: border-box;
 }
 
