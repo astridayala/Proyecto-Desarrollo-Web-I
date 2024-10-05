@@ -15,6 +15,9 @@
     width: 100%;
     top: 90px;
 }
+.cont{
+    padding-top: 90px;
+}
 #bold{
     font-weight: bold;
 }
