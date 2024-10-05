@@ -30,7 +30,7 @@ body {
     position: fixed;
     top: 0;
     padding: 10px 0; 
-    height: 60px;
+    height: 70px;
 }
 
 #logo {
@@ -74,6 +74,7 @@ body {
     margin: 20px 0px 5px 0px; 
     border-radius: 20px;
     background-color: var(--color1); 
+    margin-top: 40px;
 }
 
 #Busqueda i {
