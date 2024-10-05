@@ -31,6 +31,7 @@ body {
     top: 0;
     padding: 10px 0; 
     height: 70px;
+    z-index: 100;
 }
 
 #logo {
@@ -125,7 +126,14 @@ li > a {
     text-align: center;
     height: 100%;
 }
-
+.barra{
+    position:sticky;
+    width: 100%;
+    top: 90px;
+}
+.cont{
+    padding-top: 20px;
+}
 /*.cont {
     width: 1300px 50px;
     margin: 70px 10px;
