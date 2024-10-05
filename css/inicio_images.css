@@ -10,8 +10,25 @@
     clear: left;
 }
 
-#galeria .plan {
-    font-size: 1em;
-    margin-bottom: 10px;
+#galeria{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.plan {
+    width: 23%;
+    margin-bottom: 20px;
     padding-bottom: 1px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.plan img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
 }
