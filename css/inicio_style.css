@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
 * {
     padding: 0;
@@ -92,11 +92,13 @@ body {
     width: 0px 10px 0px 10px;
     color: var(--color3);
     text-decoration: none;
+    font-family: 'Lilita One', sans-serif;
 }
 
 li > a {
     color: var(--color3);
     text-decoration: none;
+    font-family: 'Lilita One', sans-serif;
 }
 
 #items li:hover {
@@ -118,6 +120,7 @@ li > a {
 
 .sect h2 {
     color: white;
+    font-family: 'Lilita One', sans-serif;
 }
 
 .sect .barrita {
@@ -136,6 +139,7 @@ li > a {
 .cont{
     padding-top: 20px;
 }
+
 /*.cont {
     width: 1300px 50px;
     margin: 70px 10px;
@@ -158,6 +162,15 @@ footer {
     color: var(--color3);
     text-align: center;
     font-size: 12px;
+}
+
+h2 > a{
+    font-family: 'Lilita One', sans-serif;
+}
+
+footer>h3{
+    font-family: 'Lilita One', sans-serif;
+    padding-top: 10px;
 }
 
 .menu-ham {
