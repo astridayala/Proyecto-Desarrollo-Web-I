@@ -92,6 +92,7 @@ body {
     width: 0px 10px 0px 10px;
     color: var(--color3);
     text-decoration: none;
+    font-family: 'Lilita One', sans-serif;
 }
 
 li > a {
@@ -169,7 +170,7 @@ h2 > a{
 
 footer>h3{
     font-family: 'Lilita One', sans-serif;
-    padding-top: 40px;
+    padding-top: 10px;
 }
 
 .menu-ham {
