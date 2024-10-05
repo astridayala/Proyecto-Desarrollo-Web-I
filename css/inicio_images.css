@@ -24,6 +24,7 @@
     border: 1px solid #ddd;
     padding: 10px;
     box-sizing: border-box;
+    min-height: 350px;
 }
 
 .plan img {
