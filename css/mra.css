@@ -12,4 +12,9 @@
     font-size: 60px;
     color: var(--color2); 
 }
+.dnl p {
+    margin: 20px 15px;
+    font-size: 1.5rem;
+
+}
 
