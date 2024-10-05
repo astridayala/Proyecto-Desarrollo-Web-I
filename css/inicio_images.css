@@ -3,3 +3,9 @@
     margin: 0 auto;
     clear: left;
 }
+
+#galeria .plan {
+    font-size: 1em;
+    margin-bottom: 10px;
+    padding-bottom: 1px;
+}
