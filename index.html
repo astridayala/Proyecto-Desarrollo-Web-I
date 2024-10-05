@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/inicio_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/inicio_images.css">
     <link rel="icon" href="img/logo.png" type="image/x-icon">
     <title>Cupon Mania</title>
 </head>
 <body>
     <header class="container">
-        <a href="index.html"><img src="img/Logo.jpg" alt="Logo" id="logo"></a>  
+        <a href="index copy.html"><img src="img/Logo.jpg" alt="Logo" id="logo"></a>  
         <input type="checkbox" id="menu-ham" class="menu-ham-checkbox" />
         <label for="menu-ham" class="menu-ham">
             <i class="fa fa-bars"></i> <!-- Ícono de menú (hamburguesa) -->
@@ -43,9 +44,9 @@
                     <h2>Comida</h2>
                 </section>
             </article>
-            <article class="cont">
-                <div class="galeria">
-                    <div class="opciones">
+            <section id="contenido">
+                <div id="galeria">
+                    <div class="plan opciones">
                         <img src="img/comida/monster-burritos.jpeg" alt="monster-burritos" width="260" height="150">
                         <p>
                             <div class="info-cupon">
@@ -57,7 +58,7 @@
                             <h5>Finaliza en: <span id="bold">10 días</span></h5>
                         </p>
                     </div>
-                    <div class="opciones">
+                    <div class="plan opciones">
                         <img src="img/comida/la-bodeguita-del-cerdito.jpeg" alt="Hijos del Chilaquil" width="260" height="150">
                         <p>
                             <div class="info-cupon">
@@ -69,7 +70,7 @@
                             <h5>Finaliza en: <span id="bold">10 días</span></h5>
                         </p>
                     </div>
-                    <div class="opciones">
+                    <div class="plan opciones">
                         <img src="img/comida/restaurante-finesterre.jpeg" alt="Hijos del Chilaquil" width="260" height="150">
                         <p>
                             <div class="info-cupon">
@@ -82,7 +83,7 @@
                         </p>
                     </div>
                 </div>
-            </article>
+            </section>            
         </nav>
         <nav class="sect">
             <article class="barra" >
@@ -90,9 +91,9 @@
                     <h2>Viajes</h2>
                 </section>
             </article>
-            <article class="cont">
-                <div class="galeria">
-                    <div class="viajes">
+            <article id="contenido">
+                <div id="galeria">
+                    <div class="plan opciones">
                         <img src="img/viajes/parque.jpeg" alt="Hijos del Chilaquil" width="260" height="150">
                         <p>
                             <div class="info-cupon">
@@ -104,12 +105,12 @@
                             <h5>Finaliza en: <span id="bold">5 días</span></h5>
                         </p>
                     </div>
-                    <div class="opciones">
-                        <img src="img/viajes/la-posada-del-cielo.jpeg" alt="monster-burritos" width="260" height="150">
+                    <div class="plan opciones">
+                        <img src="img/viajes/la-posada-del-cielo.jpeg" alt="La Posada del Cielo" width="260" height="150">
                         <p>
                             <div class="info-cupon">
                                 <img src="img/logos-empresas/posada-del-cielo.jpeg" alt="">
-                                <p>Estadia de 1 noche para 4 personas en Miramundo y más en Hotel Posada del Cielo</p>
+                                <p>Estadía de 1 noche para 4 personas en Miramundo y más en Hotel Posada del Cielo</p>
                             </div>
                             <h3>$27</h3>
                             <h4>58% off | Antes $65</h4>
@@ -117,7 +118,7 @@
                         </p>
                     </div>
                 </div>
-            </article>
+            </article>           
         </nav>
         <nav class="sect">
             <article class="barra">
@@ -125,9 +126,10 @@
                     <h2>Belleza</h2>
                 </section>
             </article>
-            <article class="cont">
-                <div class="galeria">
-                    <div class="opciones">
+            
+            <article id="contenido">
+                <div id="galeria">
+                    <div class="plan opciones">
                         <img src="img/belleza/barbotas.jpeg" alt="Hijos del Chilaquil" width="260" height="150">
                         <p>
                             <div class="info-cupon">
@@ -139,7 +141,7 @@
                             <h5>Finaliza en: <span id="bold">10 días</span></h5>
                         </p>
                     </div>
-                    <div class="opciones">
+                    <div class="plan opciones">
                         <img src="img/belleza/mister-bro.jpeg" alt="Hijos del Chilaquil" width="260" height="150">
                         <p>
                             <div class="info-cupon">
@@ -151,7 +153,7 @@
                             <h5>Finaliza en: <span id="bold">10 días</span></h5>
                         </p>
                     </div>
-                    <div class="opciones">
+                    <div class="plan opciones">
                         <img src="img/belleza/cejas-y-pestanas.png" alt="Hijos del Chilaquil" width="260" height="150">
                         <p>
                             <div class="info-cupon">
@@ -164,7 +166,7 @@
                         </p>
                     </div>
                 </div>
-            </article>
+            </article>           
         </nav>
         <nav class="sect">
             <article class="barra">
@@ -172,31 +174,57 @@
                     <h2>Salud</h2>
                 </section>
             </article>
-            <article class="barra">
-                <section class="barrita" id="Salud">
-                    <h2>Salud</h2>
-                </section>
-            </article>
-            <article id="contenido">
+            <section id="contenido">
                 <div id="galeria">
                     <div class="plan opciones">
-                        <img src="img/salud/clinica-cindy-padilla-relleno.png" alt="Hijos del Chilaquil" width="260" height="150">
+                        <img src="img/salud/clinica-cindy-padilla-relleno.png" alt="Clínica Cindy Padilla" width="260" height="150">
                         <div class="info-cupon">
                             <img src="img/logos-empresas/clinica-dental.jpg" alt="">
-                            <p>1 relleno + limpieza dental con ultrasonido + pulido dental + aplicación tópica de flúor + diagnóstico + plan de tratamiento + presupuesto</p>
+                            <p>1 relleno + limpieza dental con ultrasonido + pulido dental + diagnóstico + plan de tratamiento + presupuesto</p>
                         </div>
                         <h3>$20</h3>
                         <h4>71% off | Antes $70</h4>
                         <h5>Finaliza en: <span id="bold">5 días</span></h5>
                     </div>
                     <div class="plan opciones">
-                        <img src="img/salud/ultra-group.jpeg" alt="Hijos del Chilaquil" width="260" height="150">
+                        <img src="img/salud/ultra-group.jpeg" alt="Ultra Group" width="260" height="150">
                         <div class="info-cupon">
                             <img src="img/logos-empresas/ultra-group.png" alt="">
                             <p>Ultrasonografía a escoger + consulta médica de clínica <span id="bold">Ultra-A-Group</span></p>
                         </div>
                         <h3>$19</h3>
                         <h4>71% off | Antes $65</h4>
+                        <h5>Finaliza en: <span id="bold">5 días</span></h5>
+                    </div>
+                    <div class="plan opciones">
+                        <img src="img/salud/lab-vidlab.png" alt="VIDLAB" width="260" height="150">
+                        <div class="info-cupon">
+                            <img src="img/logos-empresas/vid-lab.jpeg" alt="">
+                            <p>Prueba de ADN en VIDLAB El Salvador</p>
+                        </div>
+                        <h3>$275</h3>
+                        <h4>52% off | Antes $575</h4>
+                        <h5>Finaliza en: <span id="bold">5 días</span></h5>
+                    </div>
+                </div>
+            </section>                     
+        </nav>
+        <nav class="sect">
+            <article class="barra">
+                <section class="barrita" id="Things">
+                    <h2>Things</h2>
+                </section>
+            </article>
+            <article id="contenido">
+                <div id="galeria">
+                    <div class="plan opciones">
+                        <img src="img/things/bioinnova.jpeg" alt="monster-burritos" width="260" height="150">
+                        <div class="info-cupon">
+                            <img src="img/logos-empresas/bioinnova.png" alt="">
+                            <p>Mesa de 1.8 metros plegable. Fabricada con polietileno de alta calidad</p>
+                        </div>
+                        <h3>$50</h3>
+                        <h4>38% off | Antes $80</h4>
                         <h5>Finaliza en: <span id="bold">5 días</span></h5>
                     </div>
                     <div class="plan opciones">
@@ -209,56 +237,18 @@
                         <h4>52% off | Antes $575</h4>
                         <h5>Finaliza en: <span id="bold">5 días</span></h5>
                     </div>
-                </div>
-            </article>
-                      
-        </nav>
-        <nav class="sect">
-            <article class="barra">
-                <section class="barrita" id="Things">
-                    <h2>Things</h2>
-                </section>
-            </article>
-            <article class="cont">
-                <div class="galeria">
-                    <div class="opciones">
-                        <img src="img/things/bioinnova.jpeg" alt="monster-burritos" width="260" height="150">
-                        <p>
-                            <div class="info-cupon">
-                                <img src="img/logos-empresas/bioinnova.png" alt="">
-                                <p>Mesa de 1.8 metros plegable. Fabricadas con polietileno de alta calidad</p>
-                            </div>
-                            <h3>$50</h3>
-                            <h4>38% off | Antes $80</h4>
-                            <h5>Finaliza en: <span id="bold">5 días</span></h5>
-                        </p>
-                    </div>
-                    <div class="opciones">
-                        <img src="img/salud/lab-vidlab.png" alt="Hijos del Chilaquil" width="260" height="150">
-                        <p>
-                            <div class="info-cupon">
-                                <img src="img/logos-empresas/vid-lab.jpeg" alt="">
-                                <p>Prueba de ADN en VIDLAB El Salvador</p>
-                            </div>
-                            <h3>$275</h3>
-                            <h4>52% off | Antes $575</h4>
-                            <h5>Finaliza en: <span id="bold">5 días</span></h5>
-                        </p>
-                    </div>
-                    <div class="opciones">
+                    <div class="plan opciones">
                         <img src="img/things/bioinnova-silla.jpeg" alt="Hijos del Chilaquil" width="260" height="150">
-                        <p>
-                            <div class="info-cupon">
-                                <img src="img/logos-empresas/bioinnova.png" alt="">
-                                <p>Lujos Ergónomicos: Silla Ejecutiva con Función de Masaje Integrada</p>
-                            </div>
-                            <h3>$90</h3>
-                            <h4>65% off | Antes $138.5</h4>
-                            <h5>Finaliza en: <span id="bold">5 días</span></h5>
-                        </p>
+                        <div class="info-cupon">
+                            <img src="img/logos-empresas/bioinnova.png" alt="">
+                            <p>Lujos Ergonómicos: Silla Ejecutiva con Función de Masaje Integrada</p>
+                        </div>
+                        <h3>$90</h3>
+                        <h4>65% off | Antes $138.5</h4>
+                        <h5>Finaliza en: <span id="bold">5 días</span></h5>
                     </div>
                 </div>
-            </article>
+            </article>            
         </nav>
         <nav class="sect">
             <article class="barra">
