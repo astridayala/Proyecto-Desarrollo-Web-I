@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lilita One', sans-serif;
+}
+
+body {
+    padding-top: 70px;
+}
+
+section{
+    margin: 0 auto;
+    width: 90%;
+    overflow: hidden;
+}
