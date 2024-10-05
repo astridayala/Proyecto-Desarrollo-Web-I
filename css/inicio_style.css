@@ -63,6 +63,11 @@ body {
     font-family: 'Lilita One', sans-serif;
 }
 
+#galeria>div>a>img{
+    width: 100%;
+    height: 300px;
+}
+
 #icons {
     color: #fff;
     align-self: center;
