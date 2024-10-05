@@ -10,10 +10,13 @@
     --color8: #a3a2a2;
     --color9: #000;
 }
-.sect{
-    position: fixed;
+.barra{
+    position:fixed;
     width: 100%;
     top: 90px;
+}
+.cont{
+    padding-top: 90px;
 }
 #bold{
     font-weight: bold;
