@@ -8,6 +8,13 @@ body {
     padding-top: 70px;
 }
 
+.cont {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 section {
     margin: 0 auto;
     width: 90%;
