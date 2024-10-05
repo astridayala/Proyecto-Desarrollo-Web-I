@@ -3,3 +3,13 @@
     font-size: 2em;
 }
 
+.dnl {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.dnl h2 {
+    font-size: 60px;
+    color: var(--color2); 
+}
+
