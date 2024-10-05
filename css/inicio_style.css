@@ -20,6 +20,7 @@ body {
     --color7: #ae551d;
     --color8: #a3a2a2;
     --color9: #000;
+    --color10: #ff7c2a;
 }
 
 .container {
@@ -99,7 +100,7 @@ li > a {
 }
 
 #items li:hover {
-    background: #ff7c2a;
+    background: var(--color10);
     height: 64px;
 }
 
