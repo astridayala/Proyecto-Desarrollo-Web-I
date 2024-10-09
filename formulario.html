@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/inicio_style.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <title>Inicio de sesión</title>
+</head>
+<body>
+    <header class="container">
+        <a href="index.html"><img src="img/Logo.jpg" alt="Logo" id="logo"></a>
+        <input type="checkbox" id="menu-ham" class="menu-ham-checkbox" />
+        <label for="menu-ham" class="menu-ham">
+            <i class="fa fa-bars"></i> <!-- Ícono de menú (hamburguesa) -->
+        </label>       
+        <nav id="menu">
+            <ul id="items">
+                <li><i class="fas fa-utensils" id="icons"></i><a href="comida.html">Comida</a></li>
+                <li><i class="fa-solid fa-spray-can-sparkles" id="icons"></i><a href="belleza.html">Belleza</a></li>
+                <li><i class="fa-solid fa-car-side" id="icons"></i><a href="viajes.html">Viajes</a></li>
+                <li><i class="fa-solid fa-stethoscope" id="icons"></i><a href="salud.html">Salud</a></li>
+                <li><i class="fa-solid fa-gift" id="icons"></i><a href="things.html">Things</a></li>
+                <li><i class="fa-solid fa-code-compare" id="icons"></i><a href="howworks.html">¿Cómo funciona?</a></li>
+                <li><i class="fa-solid fa-people-group" id="icons"></i><a href="About_us.html">Nosotros</a></li>
+                <div id="Busqueda"><i class="fa-solid fa-square-up-right" id="icons"></i><a href="#">Busqueda</a></div>
+                <li><i class="fa-solid fa-user" id="icons"></i><a href="formulario.html">Registrarse</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="formulario">
+        <div class="head">
+            <h2>Inicio de sesión</h2>
+        </div>
+        <div class="logIn">
+            <form method="post" action="#">
+                <ul>
+                    <li>
+                        <span class="inicio"><i class="fa-solid fa-user"></i></span><input 
+                        type="text" required class="text" placeholder="Nombre de Usuario">
+                    </li>
+                    <li>
+                        <span class="inicio"><i class="fa-solid fa-key"></i></span><input 
+                        type="password" required class="text" placeholder="Contraseña">
+                    </li>
+                    <li>
+                        <input type="submit" value="Iniciar sesión" class="boton">
+                    </li>
+                </ul>
+            </form>
+        </div>
+            <div class="cuenta_nueva">
+                <div class="nueva">
+                    <ul>
+                        <li><a href="cuenta_nueva.html">Crear cuenta nueva</a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
