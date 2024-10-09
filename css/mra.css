@@ -1,0 +1,47 @@
+.dnl>h2{
+    text-align: center;
+    font-size: 2em;
+}
+
+#dnl {
+    text-align: center;
+    margin-top: 70px;
+}
+
+#dnl h2 {
+    font-size: 60px;
+    color: var(--color2);
+    text-align: center; 
+}
+#dnl p {
+    margin: 20px 15px;
+    font-size: 1.5rem;
+
+}
+
+#dnl .dnl-container{
+    text-align: center;
+}
+
+#dnl p{
+    margin: 16px 0px;
+    font-size: 1.5rem;
+}
+
+#dnl a{
+    margin: 16px 0px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #e36414;
+}
+
+#dnl a:hover{
+    color: #c3530e;
+}
+
+footer{
+    text-align: center;
+    margin-top: 70px;
+}
+
+
