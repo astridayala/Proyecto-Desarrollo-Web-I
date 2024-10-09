@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
 * {
@@ -14,6 +15,13 @@ body {
     --color1: #e36414;
     --color2: #0f4c5c;
     --color3: #ffffff;
+    --color4: #5f0f40;
+    --color5: #9a031e;
+    --color6: #c3530e;
+    --color7: #ae551d;
+    --color8: #a3a2a2;
+    --color9: #000;
+    --color10: #ff7c2a;
 }
 
 .container {
@@ -24,12 +32,14 @@ body {
     position: fixed;
     top: 0;
     padding: 10px 0; 
+    height: 70px;
+    z-index: 100;
 }
 
 #logo {
-    height: 50px; 
-    width: auto; 
-    margin-right: auto; 
+    height: 70px;
+    width: 100%;
+    display: block; 
 }
 
 #menu {
@@ -50,6 +60,12 @@ body {
     flex-direction: column;
     padding: 20px 10px; 
     justify-content: center;
+    font-family: 'Lilita One', sans-serif;
+}
+
+#galeria>div>a>img{
+    width: 100%;
+    height: 300px;
 }
 
 #icons {
@@ -64,9 +80,11 @@ body {
     width: 30.3%;
     height: 35px;
     border: 2px #fff solid;
-    margin: 20px 0px 5px 0px; 
+    margin: 20px 0px 40px 0px; 
     border-radius: 20px;
     background-color: var(--color1); 
+    margin-top: 40px;
+    
 }
 
 #Busqueda i {
@@ -76,21 +94,25 @@ body {
 #Busqueda a {
     color: var(--color3);
     text-decoration: none;
+    font-family: 'Lilita One', sans-serif;
 }
 
 #items div a {
     width: 0px 10px 0px 10px;
     color: var(--color3);
     text-decoration: none;
+    font-family: 'Lilita One', sans-serif;
 }
 
 li > a {
     color: var(--color3);
     text-decoration: none;
+    font-family: 'Lilita One', sans-serif;
 }
 
 #items li:hover {
-    background: #ff7c2a;
+    background: var(--color10);
+    height: 64px;
 }
 
 .sect {
@@ -107,6 +129,7 @@ li > a {
 
 .sect h2 {
     color: white;
+    font-family: 'Lilita One', sans-serif;
 }
 
 .sect .barrita {
@@ -117,8 +140,16 @@ li > a {
     text-align: center;
     height: 100%;
 }
+.barra{
+    position:sticky;
+    width: 100%;
+    top: 90px;
+}
+.cont{
+    padding-top: 20px;
+}
 
-.cont {
+/*.cont {
     width: 1300px 50px;
     margin: 70px 10px;
     display: flex;
@@ -133,7 +164,7 @@ li > a {
     border: 2px #000 solid;
     margin: 5px 0.5%;
     border-radius: 12px;
-}
+}*/
 
 footer {
     background-color: var(--color2);
@@ -142,6 +173,14 @@ footer {
     font-size: 12px;
 }
 
+h2 > a{
+    font-family: 'Lilita One', sans-serif;
+}
+
+footer>h3{
+    font-family: 'Lilita One', sans-serif;
+    padding-top: 10px;
+}
 
 .menu-ham {
     display: none; 
