@@ -17,8 +17,13 @@
     --color1: #333;
     --colo2: #555;
     --rojo: #e63946;
+<<<<<<< HEAD
     --rojo2: #d62839;
     --color3: #ddd;
+=======
+    --color3: #ddd;
+
+>>>>>>> 42931ce45e37aaac9d4c165053df6ef912d670cc
 }
 body {
     font-family: Arial, sans-serif;
@@ -122,8 +127,13 @@ h5{
 }
 .comprar {
     margin-top: 10px;
+<<<<<<< HEAD
     background-color: var(--rojo);
     color: var(--blanco); 
+=======
+    background-color: #e63946;
+    color: #fff; 
+>>>>>>> 42931ce45e37aaac9d4c165053df6ef912d670cc
     border: none;
     border-radius: 10px;
     padding: 10px 12px;
@@ -135,7 +145,11 @@ h5{
 }
     
 .comprar:hover {
+<<<<<<< HEAD
     background-color: var(--rojo2); 
+=======
+    background-color: #d62839; 
+>>>>>>> 42931ce45e37aaac9d4c165053df6ef912d670cc
     transform: scale(1.05); 
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
