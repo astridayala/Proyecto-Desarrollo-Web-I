@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
+
+:root{
+    --celeste-1: #234459;
+    --celeste-2: #3C7499;
+    --celeste-3: #5AAEE6;
+    --celeste-4: #94C1FF;
+
+    --azul-1: #012E40;
+    --azul-3: #026773;
+
+    --negro: #000;
+    --gris-obscuro: #8c8c8c;
+    --gris: #d9d9d9;
+    --blanco2: #F8F8F8;
+    --blanco: #fff;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Mulish;
+    font-size: 1em;
+}
+#header-container{
+    width: 100%;
+    background-color: var(--azul-1);
+    display: flex;
+    align-items: center; 
+    position: fixed;
+    top: 0;
+    padding: 10px 0; 
+    height: 70px;
+    z-index: 100;
+}
+#logo{
+    height: auto;
+    width: 50%;
+    padding-left: 20%;
+}
+#pages{
+    display: flex;
+    justify-content: flex-end;
+}
+#pages ul {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+}
+#pages li {
+    text-align: center;
+}
+#pages button{
+    background-color: var(--azul-1);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+#pages button:hover{
+    background-color: var(--celeste-2);
+}
+#pages a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--blanco);
+}
+#pages i {
+    color: var(--blanco);
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+#pages h2 {
+    color: var(--blanco);
+    font-size: 16px;
+    margin: 0;
+}
+body{
+    padding-top: 6.2%;
+}
+#body-container{
+    margin: 0 200px;
+    margin-bottom: 60px;
+}
+.barra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--gris);
+    position: sticky;
+    border-radius: 15px;
+    height: 50px;
+}
+.barra h2{
+    font-family: Montserrat Subrayada;
+    color: var(--azul-3);
+    font-size: 1.6em;
+}
+footer {
+    background-color: var(--azul-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    position: relative;
+}
+footer h3{
+    color: var(--blanco);
+    font-size: 0.9em;
+}
