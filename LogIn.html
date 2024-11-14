@@ -28,51 +28,13 @@
                             type="password" required class="text" placeholder="Contraseña">
                         </li>
                         <li>
-                            <button class="boton">Iniciar sesión</button>
+                            <button class="boton"><a href="index.html">Iniciar sesión</a></button>
                         </li>
                     </ul>
                 </form>
-                <script type="module">
-                    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-                    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-            
-                    // Configuración de Firebase
-                    const firebaseConfig = {
-                        apiKey: "AIzaSyDZigv2X5_57XfBkfE4zb2R2GobZ90igVI",
-                        authDomain: "proyectometodologias-2186a.firebaseapp.com",
-                        projectId: "proyectometodologias-2186a",
-                        storageBucket: "proyectometodologias-2186a.appspot.com",
-                        messagingSenderId: "1035665597993",
-                        appId: "1:1035665597993:web:fd75c9d15de9988b7a5e38"
-                    };
-            
-                    // Inicializa Firebase
-                    const app = initializeApp(firebaseConfig);
-                    const auth = getAuth(app);
-            
-                    // Lógica de inicio de sesión
-                    const loginForm = document.getElementById("loginForm");
-            
-                    loginForm.addEventListener("submit", (e) => {
-                        e.preventDefault();
-                        
-                        const email = document.getElementById("email").value;
-                        const password = document.getElementById("password").value;
-            
-                        signInWithEmailAndPassword(auth, email, password)
-                            .then((userCredential) => {
-                                // Inicio de sesión exitoso
-                                alert("Inicio de sesión exitoso.");
-                                location.assign("/CrearCatalogo.html"); // Redirige a la página correcta
-                            })
-                            .catch((error) => {
-                                console.error("Error en el inicio de sesión:", error);
-                                alert("Error: No se pudo iniciar sesión. Verifica tus credenciales.");
-                            });
-                    });
-                </script>
             </div>
         </div>
     </div>
 </body>
+<script type="module" src="js/login.js"></script>
 </html>
