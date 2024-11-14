@@ -21,7 +21,7 @@ button{
     height: 355px;
     margin: 5px 15px;
     background-color: var(--blanco);
-    border-radius: 8px;
+    border-radius: 10px;
     float: left;
     text-align: justify;
     width: 28%;
