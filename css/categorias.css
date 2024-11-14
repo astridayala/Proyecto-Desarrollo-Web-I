@@ -61,6 +61,7 @@ button{
     border-radius: 5px;
 }
 .info-cupon p{
+    color: var(--color1);
     font-size: 0.9em;
     display: flex;
     align-items: center;
