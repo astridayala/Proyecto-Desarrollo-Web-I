@@ -35,37 +35,24 @@ document.getElementById('crearCuenta').addEventListener('click', (e) => {
         });
 });
 
-/*
-
 // Evento de inicio de sesión
-const loginForm = document.getElementById('login-form');
-loginForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Evitar recargar la página
+document.getElementById('login-form').addEventListener('submit', (e) => {
+    e.preventDefault();
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    // Autenticación con Firebase
-    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-
-            // Obtener el nombre del usuario (displayName) o usar el correo como fallback
             const username = user.displayName ? user.displayName : user.email;
 
-            // Guardar el nombre del usuario en localStorage
             localStorage.setItem('username', username);
-
-            // Mostrar un mensaje de bienvenida
             alert(`Bienvenido ${username}`);
-            console.log("Redirigiendo a la página principal...");
-
-            // Redirigir a la página de inicio
-            window.location.href = "../index.html";
+            window.location.href = "../index.html"; // Verifica esta ruta
         })
         .catch((error) => {
-            const errorMessage = error.message;
-            alert(`Error: ${errorMessage}`);
+            console.error("Error al iniciar sesión:", error);
+            alert(`Error: ${error.message}`);
         });
-});*/
+});
