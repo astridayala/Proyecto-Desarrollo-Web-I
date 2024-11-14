@@ -12,21 +12,14 @@
     --gris: #d9d9d9;
     --blanco2: #F8F8F8;
     --blanco: #fff;
+    --rojo: #e63946;
 }
 button{
     border: none;
 }
-.galeria{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px 0;
-    gap: 20px;
-}
 .opciones{
     height: 355px;
     margin: 5px 15px;
-    border: solid var(--gris) 2px;
     background-color: var(--blanco);
     border-radius: 8px;
     float: left;
@@ -35,6 +28,8 @@ button{
     padding: 1%;
     margin-top: 15px;
     margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .opciones img{
     max-width: 70%;
@@ -72,16 +67,18 @@ h3, h4, h5{
 }
 h3{
     padding-top: 5px;
-    color: var(--azul-3);
     padding-bottom: 5px;
     font-size: 1.6em;
     font-weight: bold;
+    color: var(--rojo);
 }
 h4{
     padding-bottom: 5px;
-    color: var(--celeste-2);
+    color: var(--negro);
     font-size: 1.2em;
     font-weight: bolder;
+    text-decoration: line-through;
+
 }
 h5{
     padding-top: 5px;

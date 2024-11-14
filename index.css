@@ -6,6 +6,7 @@
     --celeste-2: #3C7499;
     --celeste-3: #5AAEE6;
     --celeste-4: #94C1FF;
+    --azul: #1d3557;
 
     --azul-1: #012E40;
     --azul-3: #026773;
@@ -13,8 +14,13 @@
     --negro: #000;
     --gris-obscuro: #8c8c8c;
     --gris: #d9d9d9;
+    --gris-nuevo: #f5f5f5;
     --blanco2: #F8F8F8;
     --blanco: #fff;
+    --color1: #333;
+    --colo2: #555;
+    --rojo: #e63946;
+    --color3: #ddd;
 }
 *{
     padding: 0;
@@ -79,6 +85,7 @@
 }
 body{
     padding-top: 6.2%;
+    background-color: var(--gris-nuevo);
 }
 #body-container{
     margin: 0 200px;
@@ -89,7 +96,7 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: var(--gris);
+    background-color: var(--color3);
     position: sticky;
     border-radius: 15px;
     height: 50px;
