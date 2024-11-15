@@ -3,67 +3,105 @@
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    width: 80%; /* Ajustar el ancho al 80% para que se adapte a pantallas más pequeñas */
-    max-width: 500px; /* Máximo ancho para pantallas grandes */
+    width: 500px;
     text-align: left;
     margin: 50px auto;
-    font-size: 1.2em;
-  }
-  
-  @media (max-width: 768px) {
+    font-size: 1.2em; /* Aumentar el tamaño de la fuente */
+}
+
+.barra h2 {
+    font-size: 2em; /* Texto del título más grande */
+    color: #026773;
+    text-align: center;
+}
+
+#foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+/* Alineación de los botones de edición a la par del texto */
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.info-row p {
+    margin: 0;
+    font-size: 1.3em; /* Tamaño del texto más grande */
+}
+
+/* Estilo del botón de edición */
+.edit-btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2em; /* Aumentar tamaño del texto del botón */
+    min-width: 120px; /* Aumentar el ancho mínimo del botón */
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (max-width: 768px) {
     .profile-container {
-      width: 90%; /* Ajustar el ancho al 90% para pantallas aún más pequeñas */
+        width: 90%; /* Reducir el tamaño del contenedor */
+        padding: 20px;
     }
 
     .barra h2 {
-        font-size: 2em; /* Texto del título más grande */
-        color: #026773;
-        text-align: center;
+        font-size: 1.8em; /* Reducir el tamaño del título */
     }
-    
-    #foto-perfil {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 auto;
-        display: block;
-    }
-    
-    .profile-info {
-        margin-top: 20px;
-    }
-    
-    /* Alineación de los botones de edición a la par del texto */
-    .info-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-    
-    .info-row p {
-        margin: 0;
-        font-size: 1.3em; /* Tamaño del texto más grande */
-    }
-    
-    /* Estilo del botón de edición */
-    .edit-btn {
-        padding: 10px 20px;
-        background-color: #007BFF;
-        color: #fff;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 1.2em; /* Aumentar tamaño del texto del botón */
-        min-width: 120px; /* Aumentar el ancho mínimo del botón */
-    }
-    
-    .edit-btn:hover {
-        background-color: #0056b3;
-    }
-    
-  }
-  
-  /* Resto de tus estilos... */
 
+    .profile-info {
+        font-size: 1.1em; /* Reducir tamaño del texto en info */
+    }
+
+    .info-row p {
+        font-size: 1.1em; /* Reducir el tamaño del texto */
+    }
+
+    .edit-btn {
+        font-size: 1em; /* Reducir el tamaño de la fuente del botón */
+        min-width: 100px; /* Reducir el ancho mínimo del botón */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        width: 100%; /* Hacer el contenedor más pequeño en pantallas móviles */
+        padding: 15px;
+    }
+
+    .barra h2 {
+        font-size: 1.5em; /* Reducir aún más el tamaño del título */
+    }
+
+    .profile-info {
+        font-size: 1em; /* Ajustar el tamaño del texto */
+    }
+
+    .info-row p {
+        font-size: 1em; /* Ajustar el tamaño del texto */
+    }
+
+    .edit-btn {
+        font-size: 0.9em; /* Ajustar el tamaño de la fuente del botón */
+        min-width: 90px; /* Ajustar el ancho mínimo del botón */
+    }
+}
