@@ -3,25 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="style_admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="../img/cupon-estrella.png" type="image/x-icon">
-
-    <title>CupónMania</title>
+    <title>Panel de Control - Productos</title>
 </head>
 <body>
     <header id="header-container">
-        <a href="index.html"><img src="../img/CM-Logo.png" alt="Logo-CM" id="logo"></a>
+        <!-- Cambia "../img/CM-Logo.png" por la ruta correcta si es necesario -->
+        <a href="index.html"><img src="../img/CM-Logo.png" alt="Logo CupónMania" id="logo"></a>
+        <h1>Panel de Control CUPÓNMANIA</h1>
         <nav id="pages">
             <ul>
                 <li><button><a href="crearCuentaVendedor.html"><i class="fa-solid fa-user-plus"></i><h2>Crear Vendedor</h2></a></button></li>
-                <li><button><a href="../LogIn.html"><i class="fa-solid fa-right-from-bracket"></i><h2>Cerrar sesion</h2></a></button></li>
+                <li><button><a href="../LogIn.html"><i class="fa-solid fa-right-from-bracket"></i><h2>Cerrar sesión</h2></a></button></li>
             </ul>
         </nav>
     </header>
-
-
+    <main>
+        <section class="product-column">
+            <h2>Productos en Espera</h2>
+            <div class="product-list">
+                <!-- Aquí puedes agregar productos en espera -->
+            </div>
+        </section>
+        <section class="product-column">
+            <h2>Productos Aprobados</h2>
+            <div class="product-list">
+                <div class="product-item">Peluche de osito cariñosito</div>
+            </div>
+        </section>
+        <section class="product-column">
+            <h2>Productos Rechazados</h2>
+            <div class="product-list">
+                <div class="product-item">Oso de KanYe West</div>
+            </div>
+        </section>
+    </main>
 </body>
+
 <footer>
     <h3>©2024 CupónMania S.A. de C.V. Todos los derechos reservados</h3>
 </footer>
