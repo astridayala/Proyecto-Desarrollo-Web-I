@@ -29,7 +29,7 @@
     font-size: 1em;
 }
 #header-container{
-    width: 100%;
+    width: 110%;
     background-color: var(--azul-1);
     display: flex;
     align-items: center; 
@@ -41,17 +41,20 @@
 }
 #logo{
     height: auto;
-    width: 50%;
+    width: 65%;
     padding-left: 20%;
 }
 #pages{
+    width: 80%;
     display: flex;
     justify-content: flex-end;
+    padding-right: 13%;
 }
 #pages ul {
     display: flex;
     padding: 0;
     list-style-type: none;
+    align-items: center;
 }
 #pages li {
     text-align: center;
