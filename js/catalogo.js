@@ -6,8 +6,6 @@ const firebaseConfig = {
     apiKey: "AIzaSyB68QDO-q8ngnF5Cz1cvkNJswDX4vGcs18",
     authDomain: "proyecto-desarrollo-web-i.firebaseapp.com",
     projectId: "proyecto-desarrollo-web-i",
-    storageBucket: "proyecto-desarrollo-web-i.appspot.com", // Corregido storageBucket
-    storageBucket: "proyecto-desarrollo-web-i.appspot.com", // Corregido storageBucket
     messagingSenderId: "922911576837",
     appId: "1:922911576837:web:0a723db5841c12c1649d6c"
 };
