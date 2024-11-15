@@ -1,0 +1,134 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* Variables */
+:root {
+  --celeste-1: #234459;
+  --celeste-2: #3C7499;
+  --celeste-3: #5AAEE6;
+  --celeste-4: #94C1FF;
+
+  --azul-1: #012E40;
+  --azul-3: #026773;
+
+  --negro: #000;
+  --gris-obscuro: #8c8c8c;
+  --gris: #d9d9d9;
+  --blanco2: #F8F8F8;
+  --blanco: #fff;
+  --color1: #333;
+  --color2: #555;
+  --color3: #ddd;
+}
+
+/* Base styles */
+body {
+  font-family: Mulish;
+}
+
+/* Title */
+.titulo {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.titulo h1 {
+  font-size: 60px;
+  color: var(--azul-3);
+  font-family: Montserrat Subrayada;
+}
+
+/* Head section */
+.cabeza {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Images section */
+.imagenes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Responsive image containers */
+@media (max-width: 768px) {
+  .imagenes {
+    flex-direction: column; /* Stack images on small screens */
+  }
+
+  .box {
+    width: 100%; /* Make boxes full width on small screens */
+  }
+}
+
+/* Image box styles */
+.box {
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.box img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: var(--color1);
+  font-weight: bold;
+}
+
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.box img:hover {
+  transform: scale(1.1);
+}
+
+/* About section */
+#acerca {
+  margin-top: 50px;
+}
+
+#acerca .acerca-container {
+  text-align: center;
+  padding: 90px 20px;
+  background-color: var(--celeste-2);
+}
+
+#acerca p {
+  margin: 16px 0px;
+  color: var(--color3);
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: var(--color2);
+}
+
+/* Info section */
+#info {
+  margin-top: 50px;
+}
+
+#info .info-container {
+  text-align: center;
+  padding: 90px 20px;
+  background-color: var(--azul-3);
+}
+
+#info p {
+  margin: 16px 0px;
+  color: var(--blanco);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
