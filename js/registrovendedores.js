@@ -1,4 +1,4 @@
-import { registerSeller } from "./firebase.js";
+import { registerSeller, logInSeller } from "./firebase.js";
 
 document.getElementById("registerForm")?.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -14,5 +14,19 @@ document.getElementById("registerForm")?.addEventListener("submit", async (e) =>
         alert("Usuario creado exitosamente");
     } else {
         alert("Ya existe un usuario asociado a este correo o ocurrió un error");
+    }
+});
+
+document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("correo").value;
+    const password = document.getElementById("psswrd").value;
+
+    const loggedIn = await logInSeller(email, password);
+    if (loggedIn) {
+        alert("Inicio de sesión exitoso");
+    } else {
+        alert("Usuario y/o contraseña incorrecta o error en el inicio de sesión");
     }
 });

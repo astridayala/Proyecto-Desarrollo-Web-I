@@ -67,3 +67,15 @@ export async function registerSeller(email, password, storeName, address, phone)
         return false;
     }
 }
+
+export async function logInSeller(email, password) {
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.log("Inicio de sesión de vendedor exitoso:", user);
+        return true;
+    } catch (error) {
+        console.error("Error al iniciar sesión del vendedor:", error.message);
+        return false;
+    }
+}
