@@ -26,6 +26,7 @@ document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
     const loggedIn = await logInSeller(email, password);
     if (loggedIn) {
         alert("Inicio de sesión exitoso");
+        window.location.href = "../vendedor/index.html";
     } else {
         alert("Usuario y/o contraseña incorrecta o error en el inicio de sesión");
     }
