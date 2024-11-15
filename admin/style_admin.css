@@ -164,6 +164,7 @@ img {
     z-index: 9999;
 }
 .producto{
+    border: none;
     display: flex;
     text-align: center;
     align-items: center;

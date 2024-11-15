@@ -66,9 +66,9 @@ class AdminPanel {
     actualizarLista(elementoID, listaProductos, tipo) {
         const contenedor = document.getElementById(elementoID);
         contenedor.innerHTML = listaProductos.map(producto => `
-            <div class="producto">
+            <button class="producto">
                 <h4 class="producto-titulo" onclick="admin.mostrarModal(${JSON.stringify(producto).replace(/"/g, '&quot;')})">${producto.nombre}</h4>
-            </div>
+            </button>
         `).join('');
     }
     
