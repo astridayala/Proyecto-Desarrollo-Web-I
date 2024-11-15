@@ -1,0 +1,248 @@
+:root{
+    --celeste-1: #234459;
+    --celeste-2: #3C7499;
+    --celeste-3: #5AAEE6;
+    --celeste-4: #94C1FF;
+    --azul: #1d3557;
+
+    --azul-1: #012E40;
+    --azul-3: #026773;
+
+    --negro: #000;
+    --gris-obscuro: #8c8c8c;
+    --gris: #d9d9d9;
+    --gris-nuevo: #f5f5f5;
+    --blanco2: #F8F8F8;
+    --blanco: #fff;
+    --color1: #333;
+    --colo2: #555;
+    --rojo: #e63946;
+
+    --rojo2: #d62839;
+    --color3: #ddd;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--gris-nuevo);
+    color: var(--color1);
+    margin: 0;
+    padding: 0;
+}
+#body-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.superior {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.opciones {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--blanco);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.opciones img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+.info-cupon {
+    flex: 1;
+    padding: 10px;
+}
+#miniatura {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+h3 {
+    color: var(--rojo);
+    font-size: 1.5em;
+    margin-top: 0;
+}
+h4 {
+    font-size: 1.2em;
+    color:var(--color1);
+    text-decoration: line-through;
+}
+h5{
+    font-size: 1em;
+    color: var(--colo2);
+}
+.superior article ul {
+    list-style: none;
+    padding: 0;
+}
+.superior article ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid var(--color3);
+}
+.enmedio h2, .inferior h2 {
+    color: var(--azul);
+    font-size: 1.8em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.enmedio p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--colo2);
+}
+.enmedio ol {
+    margin-left: 20px;
+}
+.enmedio ol li {
+    margin-bottom: 10px;
+}
+.enmedio ul li {
+    margin-bottom: 5px;
+}
+.inferior ul {
+    list-style: none;
+    padding: 0;
+}
+.inferior ul li {
+    padding: 8px 0;
+    color: var(--colo2);
+    border-bottom: 1px solid var(--color3);
+}
+.price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.comprar {
+    margin-top: 10px;
+    background-color: var(--rojo);
+    color: var(--blanco); 
+    background-color: #e63946;
+    color: #fff; 
+    border: none;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.comprar a{
+    color: var(--blanco);
+    text-decoration: none;
+}    
+.comprar:hover {
+    background-color: var(--rojo2); 
+
+    background-color: #d62839; 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    #body-container {
+        margin: 0 15px;
+    }
+
+    .opciones {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .opciones img {
+        width: 150px;
+        margin-right: 0;
+    }
+
+    .info-cupon {
+        padding: 8px;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    h5 {
+        font-size: 0.9em;
+    }
+
+    .enmedio h2, .inferior h2 {
+        font-size: 1.5em;
+    }
+
+    .enmedio p, .enmedio ol li, .enmedio ul li {
+        font-size: 0.9em;
+    }
+
+    .price {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 768px) {
+    .superior {
+        margin-top: 60px;
+    }
+
+    .opciones {
+        flex-direction: column;
+        gap: 15px;
+        padding: 12px;
+    }
+
+    .opciones img {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .comprar {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    .price {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .superior {
+        margin-top: 50px;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    .opciones img {
+        width: 100%;
+        height: auto;
+    }
+
+    .price {
+        align-items: flex-start;
+    }
+
+    .comprar {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}

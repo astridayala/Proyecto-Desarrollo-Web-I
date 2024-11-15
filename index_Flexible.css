@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
+
+:root{
+    --celeste-1: #234459;
+    --celeste-2: #3C7499;
+    --celeste-3: #5AAEE6;
+    --celeste-4: #94C1FF;
+    --azul: #1d3557;
+    --azul-1: #012E40;
+    --azul-3: #026773;
+    --negro: #000;
+    --gris-obscuro: #8c8c8c;
+    --gris: #d9d9d9;
+    --gris-nuevo: #f5f5f5;
+    --blanco2: #F8F8F8;
+    --blanco: #fff;
+    --color1: #333;
+    --colo2: #555;
+    --rojo: #e63946;
+    --color3: #ddd;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Mulish;
+    font-size: 1em;
+}
+
+#header-container{
+    width: 100%;
+    background-color: var(--azul-1);
+    display: flex;
+    align-items: center; 
+    position: fixed;
+    top: 0;
+    padding: 10px 0; 
+    height: 70px;
+    z-index: 100;
+}
+
+#logo{
+    height: auto;
+    width: 65%;
+    padding-left: 20%;
+}
+
+#pages{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 7%;
+}
+
+#pages ul {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+    align-items: center;
+}
+
+#pages li {
+    text-align: center;
+}
+
+#pages button{
+    background-color: var(--azul-1);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#pages button:hover{
+    background-color: var(--celeste-2);
+}
+
+#pages a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+#pages i {
+    color: var(--blanco);
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+#pages h2 {
+    color: var(--blanco);
+    font-size: 16px;
+    margin: 0;
+}
+
+body{
+    padding-top: 6.2%;
+    background-color: var(--gris-nuevo);
+}
+
+#body-container{
+    margin: 0 200px;
+    margin-bottom: 60px;
+}
+
+.barra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--gris);
+    position: sticky;
+    border-radius: 10px;
+    height: 50px;
+}
+
+.barra h2{
+    font-family: Montserrat Subrayada;
+    color: var(--azul-3);
+    font-size: 1.6em;
+}
+
+footer {
+    background-color: var(--azul-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    position: relative;
+}
+
+footer h3{
+    color: var(--blanco);
+    font-size: 0.9em;
+}
+
+/* MEDIA QUERIES */
+
+/* Pantalla de PC (por defecto) */
+@media (min-width: 1024px) {
+    #logo {
+        width: 80%; /* Haciendo el logo más grande en PC */
+        padding-left: 10%; /* Alineación ajustada */
+    }
+
+    #pages {
+        width: 80%;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 7%;
+    }
+
+    #body-container {
+        margin: 0 200px;
+        margin-bottom: 60px;
+    }
+}
+
+/* Pantalla de Tablet */
+@media (max-width: 1023px) and (min-width: 768px) {
+    #header-container {
+        padding: 10px 5%;
+    }
+
+    #logo {
+        width: 50%;
+        padding-left: 10%;
+    }
+
+    #pages {
+        width: 70%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #body-container {
+        margin: 0 100px;
+    }
+}
+
+/* Pantalla de Móvil */
+@media (max-width: 767px) {
+    #header-container {
+        padding: 10px 5%;
+        height: 60px;
+    }
+
+    #logo {
+        width: 40%;
+        padding-left: 10%;
+    }
+
+    #pages {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--azul-1);
+        padding: 1rem 0;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        z-index: 200;
+    }
+
+    #pages ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #pages li {
+        margin: 0;
+    }
+
+    #hamburger-icon {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    #hamburger-icon:checked ~ #pages {
+        display: flex;
+    }
+
+    #body-container {
+        margin: 0 20px;
+    }
+}
