@@ -48,6 +48,15 @@ class AdminPanel {
         }
     }
 
+    mostrarDetalles(id) {
+        const detalles = document.getElementById(`detalles-${id}`);
+        if (detalles.style.display === 'none') {
+            detalles.style.display = 'block';
+        } else {
+            detalles.style.display = 'none';
+        }
+    }    
+
     mostrarProductos() {
         this.actualizarLista('lista-espera', this.productosPendientes, 'pendiente');
         this.actualizarLista('lista-aprobados', this.productosAprobados, 'aprobado');
@@ -58,21 +67,23 @@ class AdminPanel {
         const contenedor = document.getElementById(elementoID);
         contenedor.innerHTML = listaProductos.map(producto => `
             <div class="producto">
-                <h4>Nombre del Producto:</h4>
-                <p>${producto.nombre}</p>
-                <h4>Descripción:</h4>
-                <p>${producto.descripcion}</p>
-                <h4>Precio:</h4>
-                <p>${producto.precio}</p>
-                <h4>Categoría:</h4>
-                <p>${producto.categoria}</p>
-                <img src="${producto.imagenURL}" alt="${producto.nombre}">
-                ${tipo === 'pendiente' ? `
-                    <button class="button aprobar" onclick="admin.aprobarProducto('${producto.id}')">Aprobar</button>
-                    <button class="button rechazar" onclick="admin.rechazarProducto('${producto.id}')">Rechazar</button>
-                ` : ''}
+                <h4 class="producto-titulo" onclick="admin.mostrarDetalles('${producto.id}')">${producto.nombre}</h4>
+                <div id="detalles-${producto.id}" class="producto-detalles" style="display: none;">
+                    <h4>Descripción:</h4>
+                    <p>${producto.descripcion}</p>
+                    <h4>Precio:</h4>
+                    <p>${producto.precio}</p>
+                    <h4>Categoría:</h4>
+                    <p>${producto.categoria}</p>
+                    <img src="${producto.imagenURL}" alt="${producto.nombre}">
+                    ${tipo === 'pendiente' ? `
+                        <button class="button aprobar" onclick="admin.aprobarProducto('${producto.id}')">Aprobar</button>
+                        <button class="button rechazar" onclick="admin.rechazarProducto('${producto.id}')">Rechazar</button>
+                    ` : ''}
+                </div>
             </div>
         `).join('');
+        
     }
 
     async aprobarProducto(id) {
@@ -119,12 +130,6 @@ class AdminPanel {
 
 window.admin = new AdminPanel();
 
-
-// Función para cerrar el modal
-function cerrarModal(event) {
-    if (event) event.stopPropagation();
-    document.querySelector('.modal-container').style.display = 'none';
-}
 
 // Asegúrate de que el modal esté cerrado al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
