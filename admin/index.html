@@ -9,7 +9,6 @@
 </head>
 <body>
     <header id="header-container">
-        <!-- Cambia "../img/CM-Logo.png" por la ruta correcta si es necesario -->
         <a href="index.html"><img src="../img/CM-Logo.png" alt="Logo CupónMania" id="logo"></a>
         <h1>Panel de Control CUPÓNMANIA</h1>
         <nav id="pages">
@@ -20,27 +19,43 @@
         </nav>
     </header>
     <main>
-        <section class="product-column">
-            <h2>Productos en Espera</h2>
-            <div class="product-list">
-                <!-- Aquí puedes agregar productos en espera -->
-            </div>
-        </section>
-        <section class="product-column">
-            <h2>Productos Aprobados</h2>
-            <div class="product-list">
-                <div class="product-item">Peluche de osito cariñosito</div>
-            </div>
-        </section>
-        <section class="product-column">
-            <h2>Productos Rechazados</h2>
-            <div class="product-list">
-                <div class="product-item">Oso de KanYe West</div>
+        <section id="administracion-productos">
+            <h2 style="text-align: center;">Revisión de productos</h2>
+            <div class="panel-control">
+                <div id="productos-en-espera" class="productos-lista">
+                    <h3>Productos en Espera</h3>
+                    <div id="lista-espera"></div>
+                </div>
+                <div id="productos-aprobados" class="productos-lista">
+                    <h3>Productos Aprobados</h3>
+                    <div id="lista-aprobados"></div>
+                </div>
+                <div id="productos-rechazados" class="productos-lista">
+                    <h3>Productos Rechazados</h3>
+                    <div id="lista-rechazados"></div>
+                </div>
             </div>
         </section>
     </main>
-</body>
 
+    <!-- Modal para mostrar detalles del producto -->
+    <div id="modal" class="modal" onclick="cerrarModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <h3 id="modal-producto-nombre"></h3>
+            <p><strong>ID del Vendedor:</strong> <span id="modal-producto-vendedor"></span></p>
+            <p><strong>Descripción:</strong> <span id="modal-producto-descripcion"></span></p>
+            <p><strong>Precio:</strong> $<span id="modal-producto-precio"></span></p>
+            <p><strong>Categoría:</strong> <span id="modal-producto-categoria"></span></p>
+            <img id="modal-producto-imagen" src="" alt="Imagen del Producto" style="width: 100%; max-width: 200px;">
+            <div id="botones-aprobacion">
+                <button id="aprobar-btn" class="button aprobar">Aprobar</button>
+                <button id="rechazar-btn" class="button rechazar">Rechazar</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="module" src="../js/ofertas.js" defer></script>
 <footer>
     <h3>©2024 CupónMania S.A. de C.V. Todos los derechos reservados</h3>
 </footer>
