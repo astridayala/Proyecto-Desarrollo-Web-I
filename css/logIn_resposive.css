@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-/* Variables de color */
 :root{
     --celeste-1: #234459;
     --celeste-2: #3C7499;
@@ -17,68 +16,57 @@
     --blanco2: #F8F8F8;
     --blanco: #fff;
     --color1: #333;
-    --color2: #555;
+    --colo2: #555;
     --rojo: #e63946;
     --color3: #ddd;
 }
 
-/* Diseño base */
-body {
-    font-family: 'Mulish', sans-serif;
+body{
+    font-family: Mulish, sans-serif;
     background-color: var(--gris-nuevo);
-    color: var(--color1);
-    width: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-size: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Contenedor del formulario */
-.form-container {
+.form-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
     padding: 20px;
     background-color: var(--blanco);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo */
-.logo-CM {
+.logo-CM{
     width: 120px;
     margin-bottom: 20px;
 }
 
-.text-icon-container {
-    position: relative;
-  }
-  
-  .text-icon-container input {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .text-icon-container .icon {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-  }
-  
-  /* Media query para pantallas más pequeñas */
-  @media (max-width: 768px) {
-    .text-icon-container input {
-      padding: 8px 15px;
+@media (max-width: 600px) {
+    .logo-CM {
+        width: 100px;
     }
-  
-    .text-icon-container .icon {
-      top: 8px;
-      left: 8px;
-    }
-  }
 
+    .form-container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-CM {
+        width: 90px;
+    }
+
+    .form-container {
+        max-width: 95%;
+        padding: 10px;
+    }
+}

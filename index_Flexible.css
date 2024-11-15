@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
 
-:root{
+:root {
     --celeste-1: #234459;
     --celeste-2: #3C7499;
     --celeste-3: #5AAEE6;
@@ -21,32 +21,32 @@
     --color3: #ddd;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: Mulish;
     font-size: 1em;
 }
 
-#header-container{
+#header-container {
     width: 100%;
     background-color: var(--azul-1);
     display: flex;
-    align-items: center; 
+    align-items: center;
     position: fixed;
     top: 0;
-    padding: 10px 0; 
+    padding: 10px 0;
     height: 70px;
     z-index: 100;
 }
 
-#logo{
+#logo {
     height: auto;
     width: 65%;
     padding-left: 20%;
 }
 
-#pages{
+#pages {
     width: 80%;
     display: flex;
     justify-content: flex-end;
@@ -64,7 +64,7 @@
     text-align: center;
 }
 
-#pages button{
+#pages button {
     background-color: var(--azul-1);
     border: none;
     padding: 10px 15px;
@@ -72,7 +72,7 @@
     border-radius: 15px;
 }
 
-#pages button:hover{
+#pages button:hover {
     background-color: var(--celeste-2);
 }
 
@@ -96,17 +96,17 @@
     margin: 0;
 }
 
-body{
+body {
     padding-top: 6.2%;
     background-color: var(--gris-nuevo);
 }
 
-#body-container{
+#body-container {
     margin: 0 200px;
     margin-bottom: 60px;
 }
 
-.barra{
+.barra {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +117,7 @@ body{
     height: 50px;
 }
 
-.barra h2{
+.barra h2 {
     font-family: Montserrat Subrayada;
     color: var(--azul-3);
     font-size: 1.6em;
@@ -133,7 +133,7 @@ footer {
     position: relative;
 }
 
-footer h3{
+footer h3 {
     color: var(--blanco);
     font-size: 0.9em;
 }
@@ -142,9 +142,13 @@ footer h3{
 
 /* Pantalla de PC (por defecto) */
 @media (min-width: 1024px) {
+    #header-container {
+        width: 100%;
+    }
+
     #logo {
-        width: 80%; /* Haciendo el logo más grande en PC */
-        padding-left: 10%; /* Alineación ajustada */
+        width: 65%; /* Logo tamaño por defecto en PC */
+        padding-left: 20%;
     }
 
     #pages {
@@ -160,8 +164,8 @@ footer h3{
     }
 }
 
-/* Pantalla de Tablet */
-@media (max-width: 1023px) and (min-width: 768px) {
+/* Pantalla de Tablet (max-width: 768px) */
+@media (max-width: 768px) {
     #header-container {
         padding: 10px 5%;
     }
@@ -180,18 +184,27 @@ footer h3{
     #body-container {
         margin: 0 100px;
     }
+
+    .opciones {
+        flex-direction: column;
+    }
+
+    .opciones img {
+        width: 90%;
+        margin-bottom: 15px;
+    }
 }
 
-/* Pantalla de Móvil */
-@media (max-width: 767px) {
+/* Pantalla de Móvil (max-width: 480px) */
+@media (max-width: 480px) {
     #header-container {
         padding: 10px 5%;
         height: 60px;
     }
 
     #logo {
-        width: 40%;
-        padding-left: 10%;
+        width: 100%;
+        padding-left: 0;
     }
 
     #pages {
@@ -229,5 +242,9 @@ footer h3{
 
     #body-container {
         margin: 0 20px;
+    }
+
+    footer h3 {
+        font-size: 0.8em;
     }
 }
