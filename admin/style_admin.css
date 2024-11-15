@@ -1,21 +1,3 @@
-/* Estilos Generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Mulish, Arial, sans-serif;
-}
-
-body {
-    background-color: var(--gris-nuevo);
-    color: var(--color1);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding-top: 70px; 
-}
-
-/* Variables de color */
 :root {
     --celeste-1: #234459;
     --celeste-2: #3C7499;
@@ -34,99 +16,13 @@ body {
     --color1: #333;
     --color2: #555;
     --color3: #ddd;
+    --verde: #4caf50;
 }
-
-#header-container {
-    background-color: var(--azul-1);
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 70px;
-    padding: 0 20px;
-    z-index: 100;
-}
-
-#logo {
-    width: 150px; 
-    height: auto;
-}
-
-#pages {
-    margin-left: auto;
-    display: flex;
-}
-
-#pages ul {
-    display: flex;
-    list-style: none;
-}
-
-#pages li {
-    margin-left: 10px;
-}
-
-#pages button {
-    background-color: var(--azul-1);
-    border: none;
-    border-radius: 8px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#pages button:hover {
-    background-color: var(--celeste-2);
-}
-
-#pages a {
-    text-decoration: none;
-    color: var(--blanco);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#pages i {
-    font-size: 24px;
-    color: var(--blanco);
-    margin-bottom: 5px;
-}
-
-#pages h2 {
-    font-size: 14px;
-    color: var(--blanco);
-}
-
-/* Main Content */
-#body-container {
-    margin: 20px auto;
-    padding: 0 20px;
-    width: 90%;
-}
-
 #administracion-productos {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
-.barra {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--gris);
-    border-radius: 10px;
-    height: 50px;
-}
-
-.barra h2 {
-    font-family: 'Montserrat Subrayada', sans-serif;
-    font-size: 1.6em;
-    color: var(--azul-3);
-}
-
 .panel-control {
     display: flex;
     justify-content: space-between;
@@ -142,6 +38,7 @@ body {
 }
 
 .product-column h3 {
+    font-family: Montserrat Subrayada;
     text-align: center;
     margin-bottom: 15px;
     color: var(--azul-1);
@@ -152,8 +49,6 @@ body {
     flex-direction: column;
     gap: 10px;
 }
-
-/* Información del producto */
 .product-item {
     background-color: var(--gris-nuevo);
     border-radius: 8px;
@@ -168,69 +63,90 @@ body {
     margin: 10px 0;
 }
 
-/* Modal en Productos en Espera */
-.product-item .modal {
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: var(--blanco);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.modal {
+    background: var(--blanco);
     border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    margin-top: 30px; 
-    width: 100%;
-    max-width: 600px; 
     position: relative;
-    left: 300px; 
+    animation: fadeIn 0.3s ease-out;
 }
 
-.product-item .modal img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin: 15px 0;
-    left: 200px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-.product-item .modal .modal-buttons {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.product-item .modal .button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    color: var(--blanco);
-    transition: background-color 0.3s ease;
-}
-
-.product-item .modal .aprobar {
-    background-color: var(--celeste-3);
-}
-
-.product-item .modal .aprobar:hover {
-    background-color: var(--celeste-2);
-}
-
-.product-item .modal .rechazar {
-    background-color: var(--rojo);
-}
-
-.product-item .modal .rechazar:hover {
-    background-color: #b52030;
-}
-
-
-/* Footer */
-footer {
-    background-color: var(--azul-1);
-    padding: 10px 0;
+.modal-content {
     text-align: center;
-    margin-top: auto;
-    color: var(--blanco);
-    font-size: 0.9em;
 }
 
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--color2);
+    cursor: pointer;
+}
+
+.product-column h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: var(--color1);
+}
+
+p {
+    margin: 5px 0;
+    color: var(--color2);
+}
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.aprobar {
+    background-color: var(--verde);
+    color: white;
+}
+
+.rechazar {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+
+.button:hover {
+    opacity: 0.9;
+}
