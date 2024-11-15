@@ -3,13 +3,14 @@ import { registerSeller, logInSeller } from "./firebase.js";
 document.getElementById("registerForm")?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const storeImg = document.getElementById("storeImg").value;
     const storeName = document.getElementById("storeName").value;
     const address = document.getElementById("loginDireccion").value;
     const phone = document.getElementById("loginTelefono").value;
     const email = document.getElementById("loginEmail").value;
     const password = document.getElementById("loginPassword").value;
 
-    const seller = await registerSeller(email, password, storeName, address, phone);
+    const seller = await registerSeller(storeImg, email, password, storeName, address, phone);
     if (seller) {
         alert("Usuario creado exitosamente");
     } else {
