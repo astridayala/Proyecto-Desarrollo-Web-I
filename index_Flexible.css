@@ -138,16 +138,13 @@ footer h3 {
     font-size: 0.9em;
 }
 
-/* MEDIA QUERIES */
-
-/* Pantalla de PC (por defecto) */
 @media (min-width: 1024px) {
     #header-container {
         width: 100%;
     }
 
     #logo {
-        width: 65%; /* Logo tamaño por defecto en PC */
+        width: 65%; 
         padding-left: 20%;
     }
 
@@ -164,7 +161,7 @@ footer h3 {
     }
 }
 
-/* Pantalla de Tablet (max-width: 768px) */
+
 @media (max-width: 768px) {
     #header-container {
         padding: 10px 5%;
@@ -195,7 +192,6 @@ footer h3 {
     }
 }
 
-/* Pantalla de Móvil (max-width: 480px) */
 @media (max-width: 480px) {
     #header-container {
         padding: 10px 5%;

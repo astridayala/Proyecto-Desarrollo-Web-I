@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
+
+
 :root {
     --celeste-1: #234459;
     --celeste-2: #3C7499;
@@ -22,7 +26,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Mulish;
     background-color: var(--gris-nuevo);
     color: var(--color1);
     margin: 0;
@@ -168,7 +172,6 @@ h5 {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     #body-container {
         margin: 0 15px;
