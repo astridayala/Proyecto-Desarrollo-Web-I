@@ -1,11 +1,8 @@
-// Importamos las funciones de autenticación desde firebase.js
 import { registerUser, logInUser } from "./firebase.js";
 
-// Evento para el formulario de registro
 document.getElementById("registerForm")?.addEventListener("submit", async (e) => {
-    e.preventDefault(); // Evita el envío del formulario por defecto
+    e.preventDefault();
     
-    // Capturamos los valores ingresados en el formulario de registro
     const email = document.getElementById("registerEmail").value;
     const password = document.getElementById("registerPassword").value;
     const firstName = document.getElementById("firstName").value;
@@ -19,7 +16,6 @@ document.getElementById("registerForm")?.addEventListener("submit", async (e) =>
     }
 });
 
-// Evento para el formulario de inicio de sesión
 document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
