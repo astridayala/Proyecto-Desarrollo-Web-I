@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import { getFirestore, collection, getDocs, updateDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 
+
 // Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyB68QDO-q8ngnF5Cz1cvkNJswDX4vGcs18",
@@ -66,12 +67,11 @@ class AdminPanel {
     actualizarLista(elementoID, listaProductos, tipo) {
         const contenedor = document.getElementById(elementoID);
         contenedor.innerHTML = listaProductos.map(producto => `
-            <div class="producto">
+            <button class="producto">
                 <h4 class="producto-titulo" onclick="admin.mostrarModal(${JSON.stringify(producto).replace(/"/g, '&quot;')})">${producto.nombre}</h4>
-            </div>
+            </button>
         `).join('');
-    }
-    
+    }    
 
     async aprobarProducto(id) {
         console.log("Intentando aprobar producto con ID:", id);
@@ -114,24 +114,35 @@ class AdminPanel {
         }
     }
     
-    mostrarModal(producto) {
-        // Llenar los datos del modal
-        document.getElementById('modal-producto-nombre').textContent = producto.nombre;
-        document.getElementById('modal-producto-vendedor').textContent = producto.idVendedor || 'N/A';
-        document.getElementById('modal-producto-descripcion').textContent = producto.descripcion;
-        document.getElementById('modal-producto-precio').textContent = producto.precio;
-        document.getElementById('modal-producto-categoria').textContent = producto.categoria;
-        document.getElementById('modal-producto-imagen').src = producto.imagenURL;
-        document.getElementById('modal-producto-imagen').alt = producto.nombre;
+    async mostrarModal(producto) {
+        try {
+            console.log("Abriendo modal para producto:", producto);
     
-        // Configurar botones para aprobar y rechazar
-        document.getElementById('aprobar-btn').onclick = () => this.aprobarProducto(producto.id);
-        document.getElementById('rechazar-btn').onclick = () => this.rechazarProducto(producto.id);
+            // Llenar los datos del modal con la información del producto
+            document.getElementById('modal-producto-nombre').textContent = producto.nombre || 'Sin nombre';
+            document.getElementById('modal-producto-descripcion').textContent = producto.descripcion || 'Sin descripción';
+            document.getElementById('modal-producto-precio').textContent = producto.precio || '0.00';
+            document.getElementById('modal-producto-categoria').textContent = producto.categoria || 'Sin categoría';
+            document.getElementById('modal-producto-imagen').src = producto.imagenURL || '';
+            document.getElementById('modal-producto-imagen').alt = producto.nombre || 'Imagen no disponible';
+
+            // Mostrar botones solo si el producto está en estado "pendiente"
+            const botones = document.getElementById('botones-aprobacion');
+            if (producto.estado === 'pendiente') {
+                botones.style.display = 'flex';
+                document.getElementById('aprobar-btn').onclick = () => this.aprobarProducto(producto.id);
+                document.getElementById('rechazar-btn').onclick = () => this.rechazarProducto(producto.id);
+            } else {
+                botones.style.display = 'none';
+            }
     
-        // Mostrar el modal
-        document.querySelector('.modal-container').style.display = 'flex';
-    }
-    
+            // Mostrar el modal
+            document.querySelector('.modal-container').style.display = 'flex';
+        } catch (error) {
+            console.error("Error al mostrar el modal o al obtener datos del vendedor:", error);
+            document.getElementById('modal-producto-vendedor').textContent = 'Error al cargar';
+        }
+    }    
 
     cerrarModal() {
         document.querySelector('.modal-container').style.display = 'none';
@@ -140,9 +151,3 @@ class AdminPanel {
 }
 
 window.admin = new AdminPanel();
-
-
-// Asegúrate de que el modal esté cerrado al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.modal-container').style.display = 'none';
-});
