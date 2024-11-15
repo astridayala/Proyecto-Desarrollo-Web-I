@@ -33,6 +33,7 @@
             </ul>
         </nav>
     </header>
+
     <main id="body-container">
         <section id="administracion-productos">
             <div class="barra">
@@ -55,22 +56,23 @@
         </section>
     </main>
 
-    <!-- Modal para mostrar detalles del producto -->
+    <!-- Modal único -->
     <div id="modal" class="modal" onclick="cerrarModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="cerrarModal()">&times;</span>
-            <h3 id="modal-producto-nombre"></h3>
-            <p><strong>ID del Vendedor:</strong> <span id="modal-producto-vendedor"></span></p>
-            <p><strong>Descripción:</strong> <span id="modal-producto-descripcion"></span></p>
-            <p><strong>Precio:</strong> $<span id="modal-producto-precio"></span></p>
-            <p><strong>Categoría:</strong> <span id="modal-producto-categoria"></span></p>
-            <img id="modal-producto-imagen" src="" alt="Imagen del Producto" style="width: 100%; max-width: 200px;">
+            <h3 id="modal-producto-nombre">Nombre del Producto</h3>
+            <p><strong>ID del Vendedor:</strong> <span id="modal-producto-vendedor">12345</span></p>
+            <p><strong>Descripción:</strong> Producto en espera de revisión</p>
+            <p><strong>Precio:</strong> $<span id="modal-producto-precio">100.00</span></p>
+            <p><strong>Categoría:</strong> Electrónica</p>
+            <img id="modal-producto-imagen" src="ruta/de/imagen.jpg" alt="Imagen del Producto">
             <div id="botones-aprobacion">
                 <button id="aprobar-btn" class="button aprobar">Aprobar</button>
                 <button id="rechazar-btn" class="button rechazar">Rechazar</button>
             </div>
         </div>
     </div>
+
     <footer>
         <h3>©2024 CupónMania S.A. de C.V. Todos los derechos reservados</h3>
     </footer>

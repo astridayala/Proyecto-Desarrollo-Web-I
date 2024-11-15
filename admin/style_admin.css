@@ -1,96 +1,21 @@
-/* Estilos de style admin css */
+/* Estilos Generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Mulish, Arial, sans-serif;
 }
 
 body {
-    background-color: #f3f6f9;
-    color: #333;
-    padding: 20px;
+    background-color: var(--gris-nuevo);
+    color: var(--color1);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 70px; 
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #012E40;
-    padding: 10px 20px;
-    color: #fff;
-    position: relative; /* Necesario para que los elementos absolutos se posicionen con respecto a este contenedor */
-}
-
-#logo {
-    height: 50px;
-}
-
-header h1 {
-    position: absolute; /* Permite el posicionamiento con respecto al header */
-    left: 50%; /* Ajusta este valor para mover el h1 horizontalmente */
-    transform: translateX(-50%); /* Centra el h1 en relación a la posición left */
-    font-size: 1.8em; /* Ajusta el tamaño si es necesario */
-    text-align: center;
-}
-
-/* La sección de navegación permanece igual */
-header nav {
-    margin-left: auto; /* Empuja el nav a la derecha */
-}
-
-header nav a {
-    color: #fff;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-main {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    flex-grow: 1; /* Permite que el contenido principal crezca para empujar el footer hacia abajo */
-}
-
-.product-column {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    width: 30%;
-}
-
-.product-column h2 {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.product-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.product-item {
-    background-color: #e6eef3;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 4px;
-    text-align: center;
-}
-
-
-
-/* Estilos del index.css*/
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
-
+/* Variables de color */
 :root {
     --celeste-1: #234459;
     --celeste-2: #3C7499;
@@ -105,58 +30,50 @@ main {
     --gris-nuevo: #f5f5f5;
     --blanco2: #F8F8F8;
     --blanco: #fff;
-    --color1: #333;
-    --colo2: #555;
     --rojo: #e63946;
+    --color1: #333;
+    --color2: #555;
     --color3: #ddd;
 }
 
-* {
-    padding: 0;
-    margin: 0;
-    font-family: Mulish;
-    font-size: 1em;
-}
-
 #header-container {
-    width: 100%;
     background-color: var(--azul-1);
     display: flex;
-    align-items: center; 
+    align-items: center;
     position: fixed;
     top: 0;
-    padding: 10px 0; 
+    width: 100%;
     height: 70px;
+    padding: 0 20px;
     z-index: 100;
 }
 
 #logo {
+    width: 150px; 
     height: auto;
-    width: 50%;
-    padding-left: 20%;
 }
 
 #pages {
+    margin-left: auto;
     display: flex;
-    justify-content: flex-end;
 }
 
 #pages ul {
     display: flex;
-    padding: 0;
-    list-style-type: none;
+    list-style: none;
 }
 
 #pages li {
-    text-align: center;
+    margin-left: 10px;
 }
 
 #pages button {
     background-color: var(--azul-1);
     border: none;
+    border-radius: 8px;
     padding: 10px 15px;
     cursor: pointer;
-    border-radius: 15px;
+    transition: background-color 0.3s ease;
 }
 
 #pages button:hover {
@@ -164,67 +81,156 @@ main {
 }
 
 #pages a {
+    text-decoration: none;
+    color: var(--blanco);
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-decoration: none;
-    color: var(--blanco);
 }
 
 #pages i {
-    color: var(--blanco);
     font-size: 24px;
+    color: var(--blanco);
     margin-bottom: 5px;
 }
 
 #pages h2 {
+    font-size: 14px;
     color: var(--blanco);
-    font-size: 16px;
-    margin: 0;
 }
 
-body {
-    padding-top: 6.2%;
-    background-color: var(--gris-nuevo);
+/* Main Content */
+#body-container {
+    margin: 20px auto;
+    padding: 0 20px;
+    width: 90%;
+}
+
+#administracion-productos {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-}
-
-#body-container {
-    margin: 0 200px;
-    margin-bottom: 60px;
-    flex-grow: 1;
+    gap: 20px;
 }
 
 .barra {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     background-color: var(--gris);
-    position: sticky;
     border-radius: 10px;
     height: 50px;
 }
 
 .barra h2 {
-    font-family: Montserrat Subrayada;
-    color: var(--azul-3);
+    font-family: 'Montserrat Subrayada', sans-serif;
     font-size: 1.6em;
+    color: var(--azul-3);
 }
 
+.panel-control {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product-column {
+    background-color: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 15px;
+}
+
+.product-column h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--azul-1);
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Información del producto */
+.product-item {
+    background-color: var(--gris-nuevo);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    color: var(--color2);
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* Modal en Productos en Espera */
+.product-item .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blanco);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 30px; 
+    width: 100%;
+    max-width: 600px; 
+    position: relative;
+    left: 300px; 
+}
+
+.product-item .modal img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 15px 0;
+    left: 200px;
+}
+
+.product-item .modal .modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.product-item .modal .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--blanco);
+    transition: background-color 0.3s ease;
+}
+
+.product-item .modal .aprobar {
+    background-color: var(--celeste-3);
+}
+
+.product-item .modal .aprobar:hover {
+    background-color: var(--celeste-2);
+}
+
+.product-item .modal .rechazar {
+    background-color: var(--rojo);
+}
+
+.product-item .modal .rechazar:hover {
+    background-color: #b52030;
+}
+
+
+/* Footer */
 footer {
     background-color: var(--azul-1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     padding: 10px 0;
+    text-align: center;
     margin-top: auto;
-}
-
-footer h3 {
     color: var(--blanco);
     font-size: 0.9em;
 }
+
