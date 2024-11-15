@@ -3,36 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_adminFlexible.css">
+    <link rel="stylesheet" href="style_admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Panel de Control - Productos</title>
 </head>
 <body>
     <header id="header-container">
-        <a href="index.html"><img src="../img/CM-Logo.png" alt="Logo CupónMania" id="logo"></a>
-        <h1>Panel de Control CUPÓNMANIA</h1>
+        <a href="index.html">
+            <img src="../img/CM-Logo.png" alt="Logo CupónMania" id="logo">
+        </a>
         <nav id="pages">
             <ul>
-                <li><button><a href="crearCuentaVendedor.html"><i class="fa-solid fa-user-plus"></i><h2>Crear Vendedor</h2></a></button></li>
-                <li><button><a href="../LogIn.html"><i class="fa-solid fa-right-from-bracket"></i><h2>Cerrar sesión</h2></a></button></li>
+                <li>
+                    <button>
+                        <a href="crearCuentaVendedor.html">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <h2>Crear Vendedor</h2>
+                        </a>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <a href="../LogIn.html">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <h2>Cerrar sesión</h2>
+                        </a>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="body-container">
         <section id="administracion-productos">
-            <h2 style="text-align: center;">Revisión de productos</h2>
+            <div class="barra">
+                <h2>Revisión de productos</h2>
+            </div>
             <div class="panel-control">
-                <div id="productos-en-espera" class="productos-lista">
+                <div id="productos-en-espera" class="product-column">
                     <h3>Productos en Espera</h3>
-                    <div id="lista-espera"></div>
+                    <div id="lista-espera" class="product-list"></div>
                 </div>
-                <div id="productos-aprobados" class="productos-lista">
+                <div id="productos-aprobados" class="product-column">
                     <h3>Productos Aprobados</h3>
-                    <div id="lista-aprobados"></div>
+                    <div id="lista-aprobados" class="product-list"></div>
                 </div>
-                <div id="productos-rechazados" class="productos-lista">
+                <div id="productos-rechazados" class="product-column">
                     <h3>Productos Rechazados</h3>
-                    <div id="lista-rechazados"></div>
+                    <div id="lista-rechazados" class="product-list"></div>
                 </div>
             </div>
         </section>
@@ -54,9 +71,9 @@
             </div>
         </div>
     </div>
+    <footer>
+        <h3>©2024 CupónMania S.A. de C.V. Todos los derechos reservados</h3>
+    </footer>
+    <script type="module" src="../js/ofertas.js" defer></script>
 </body>
-<script type="module" src="../js/ofertas.js" defer></script>
-<footer>
-    <h3>©2024 CupónMania S.A. de C.V. Todos los derechos reservados</h3>
-</footer>
 </html>
