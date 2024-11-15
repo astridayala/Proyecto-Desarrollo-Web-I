@@ -28,75 +28,95 @@
             <h2>Agregar Producto</h2>
         </div>
         <div class="logIn">
-            <form id="loginForm">
+            <form id="productForm">
                 <ul>
-                    <li><span class="inicio"><i class="fa-solid fa-user"></i></span><input id="loginEmail" type="text" required class="text" placeholder="Nombre del Producto"></li>
-                    <li><span class="inicio"><i class="fa-solid fa-user"></i></span><input id="loginDescripcion" type="text" required class="text" placeholder="Descripción"></li>
-                    <li><span class="inicio"><i class="fa-solid fa-house"></i></span><input id="loginDireccion" type="number" required class="text" placeholder="Precio"></li>
-                    <li><span class="inicio"><i class="fa-solid fa-phone"></i></span><input id="loginTelefono" type="number" required class="text" placeholder="Categoría"></li>
-                    <li><span class="inicio"><i class="fa-solid fa-envelope"></i></span><input id="loginEmail" type="email" required class="text" placeholder="URL de la imagen"></li>
+                    <li><span class="inicio"><i class="fa-solid fa-user"></i></span><input id="nombre_producto" type="text" required class="text" placeholder="Nombre del Producto"></li>
+                    <li><span class="inicio"><i class="fa-solid fa-info"></i></span><input id="descripcion_producto" type="text" required class="text" placeholder="Descripción"></li>
+                    <li><span class="inicio"><i class="fa-solid fa-money-bill"></i></span><input id="precio_producto" type="number" required class="text" placeholder="Precio"></li>
+                    <li><span class="inicio"><i class="fa-solid fa-list"></i></span><input id="categoria_producto" type="text" required class="text" placeholder="Categoría"></li>
+                    <li><span class="inicio"><i class="fa-solid fa-link"></i></span><input id="imagen_url" type="text" required class="text" placeholder="URL de la imagen"></li>
                     <li><button type="submit" class="boton">Guardar producto</button></li>
                 </ul>
             </form>
         </div>
     </div>
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
-        // Configuración de Firebase
-    const firebaseConfig = {
-        apiKey: "AIzaSyB68QDO-q8ngnF5Cz1cvkNJswDX4vGcs18",
-        authDomain: "proyecto-desarrollo-web-i.firebaseapp.com",
-        projectId: "proyecto-desarrollo-web-i",
-        storageBucket: "proyecto-desarrollo-web-i.appspot.com", // Corregido storageBucket
-        messagingSenderId: "922911576837",
-        appId: "1:922911576837:web:0a723db5841c12c1649d6c"
-    };
+// Configuración de Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyB68QDO-q8ngnF5Cz1cvkNJswDX4vGcs18",
+    authDomain: "proyecto-desarrollo-web-i.firebaseapp.com",
+    projectId: "proyecto-desarrollo-web-i",
+    storageBucket: "proyecto-desarrollo-web-i.appspot.com",
+    messagingSenderId: "922911576837",
+    appId: "1:922911576837:web:0a723db5841c12c1649d6c"
+};
 
-        // Inicializamos Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
+// Inicializamos Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-        const form = document.getElementById("productForm");
+let currentUser = null;
 
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault();
+// Verificar si el usuario está autenticado
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        currentUser = user;
+    } else {
+        currentUser = null;
+    }
+});
 
-            const nombre = document.getElementById("nombre_producto").value;
-            const descripcion = document.getElementById("descripcion_producto").value;
-            const precio = parseFloat(document.getElementById("precio_producto").value);
-            const categoria = document.getElementById("categoria_producto").value;
-            const imagenUrl = document.getElementById("imagen_url").value;
+const form = document.getElementById("productForm");
 
-            if (currentUser) {
-                try {
-                    await addDoc(collection(db, "productos"), {
-                        nombre: nombre,
-                        descripcion: descripcion,
-                        precio: precio,
-                        categoria: categoria,
-                        imagenURL: imagenUrl,
-                        fechaCreacion: serverTimestamp(),
-                        vendedorId: currentUser.uid, // ID del vendedor autenticado
-                        estado: "pendiente" // Estado inicial de aprobación
-                    });
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-                    alert("Producto agregado exitosamente con estado 'pendiente'.");
-                    form.reset();
-                } catch (error) {
-                    console.error("Error al agregar el producto:", error);
-                    alert("Error: No se pudo agregar el producto.");
-                }
-            } else {
-                alert("Debes iniciar sesión para agregar productos.");
-            }
+    // Obtener los valores del formulario
+    const nombre = document.getElementById("nombre_producto").value.trim();
+    const descripcion = document.getElementById("descripcion_producto").value.trim();
+    const precio = parseFloat(document.getElementById("precio_producto").value.trim());
+    const categoria = document.getElementById("categoria_producto").value.trim();
+    const imagenUrl = document.getElementById("imagen_url").value.trim();
+
+    // Verificar que el usuario esté autenticado
+    if (!currentUser) {
+        alert("Debes iniciar sesión para agregar productos.");
+        return;
+    }
+
+    // Validar los campos del formulario
+    if (!nombre || !descripcion || isNaN(precio) || precio <= 0 || !categoria || !imagenUrl) {
+        alert("Por favor, completa todos los campos correctamente.");
+        return;
+    }
+
+    try {
+        // Agregar el producto a Firestore
+        await addDoc(collection(db, "productos"), {
+            nombre,
+            descripcion,
+            precio,
+            categoria,
+            imagenURL: imagenUrl,
+            fechaCreacion: serverTimestamp(),
+            vendedorId: currentUser.uid,
+            estado: "pendiente" // Estado inicial del producto
         });
 
+        alert("Producto agregado exitosamente con estado 'pendiente'.");
+        form.reset(); // Reiniciar el formulario
+    } catch (error) {
+        console.error("Error al agregar el producto:", error);
+        alert("Error: No se pudo agregar el producto.");
+    }
+});
+
     </script>
-    <script src="/js/cerrarSesion.js"></script>
 </body>
 
 <footer>
