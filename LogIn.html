@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/logIn.css">
     <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="css/logo.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="img/cupon-estrella.png" type="image/x-icon">
     <title>Log In</title>
 </head>
 <body>
-    <div class="form-container">
+    <div class="form-container" style="width: 100%;">
         <img src="img/CM.png" alt="" class="logo-CM">
         <div class="formulario">
             <div class="head">
@@ -20,8 +21,8 @@
                 <form id="loginForm" method="post">
                     <ul>
                         <li>
-                            <span class="inicio"><i class="fa-solid fa-user"></i></span>
-                            <input type="text" id="correo" required class="text" placeholder="Usuario">
+                            <span class="inicio"><i class="fa-solid fa-user"></i></span><input 
+                            type="text" required class="text" placeholder="Correo electrónico">
                         </li>
                         <li>
                             <span class="inicio"><i class="fa-solid fa-key"></i></span>
@@ -32,6 +33,13 @@
                         </li>
                     </ul>
                 </form>                
+            </div>
+            <div class="cuenta_nueva">
+                <div class="nueva">
+                    <ul>
+                        <li><a href="crearCuentaVendedor.html">Cuenta nueva - Vendedor</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

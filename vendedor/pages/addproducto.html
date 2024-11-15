@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <link rel="stylesheet" href="../../css/formulario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../../img/cupon-estrella.png" type="image/x-icon">
+
+    <title>CupónMania</title>
+</head>
+<body>
+    <header id="header-container">
+        <a href="../index.html"><img src="../../img/CM-Logo.png" alt="Logo-CM" id="logo"></a>
+        <nav id="pages">
+            <ul>
+                <li><button><a href="../index.html"><i class="fa-solid fa-folder" id="icons"></i><h2>Catalogo</h2></a></button></li>
+                <li><button><a href="../pages/addproducto.html"><i class="fa-solid fa-circle-plus" id="icons"></i><h2>Agregar Producto</h2></a></button></li>
+                <li><button><a href="../pages/perfilVendedor.html"><i class="fa-solid fa-user" id="icons"></i><h2>Mi perfil</h2></a></button></li>
+                <li><button><a href="../../LogIn.html"><i class="fa-solid fa-right-from-bracket"></i><h2>Cerrar sesion</h2></a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="formulario">
+        <div class="head">
+            <h2>Agregar Producto</h2>
+        </div>
+        <div class="logIn">
+            <form id="loginForm">
+                <ul>
+                    <li><span class="inicio"><i class="fa-solid fa-user"></i></span><input id="loginEmail" type="text" required class="text" placeholder="Nombre del Producto"></li>
+                    <li><span class="inicio"><i class="fa-solid fa-user"></i></span><input id="loginDescripcion" type="text" required class="text" placeholder="Descripción"></li>
+                    <li><span class="inicio"><i class="fa-solid fa-house"></i></span><input id="loginDireccion" type="number" required class="text" placeholder="Precio"></li>
+                    <li><span class="inicio"><i class="fa-solid fa-phone"></i></span><input id="loginTelefono" type="number" required class="text" placeholder="Categoría"></li>
+                    <li><span class="inicio"><i class="fa-solid fa-envelope"></i></span><input id="loginEmail" type="email" required class="text" placeholder="URL de la imagen"></li>
+                    <li><button type="submit" class="boton">Guardar producto</button></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<footer>
+    <h3>©2024 CupónMania S.A. de C.V. Todos los derechos reservados</h3>
+</footer>
+</html>

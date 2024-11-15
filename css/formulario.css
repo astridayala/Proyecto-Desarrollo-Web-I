@@ -84,13 +84,17 @@ body {
     width: 100%;
     padding: 10px;
     background-color: var(--celeste-2);
-    color: var(--blanco);
     border: none;
+    color: var(--blanco);
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
     transition: background-color 0.3s;
+}
+.boton a{
+    color: var(--blanco);
+    text-decoration: none;
 }
 .boton:hover {
     background-color: var(--celeste-1);
