@@ -50,11 +50,15 @@
                     <li>
                         <span class="inicio"><i class="fa-solid fa-key"></i></span>
                         <input id="cvv" type="number" required class="text" placeholder="CVV">
-                    
+                    </li>
+                    <li>
+                        <div id="ultimo">
+                            <h1 >Procesar Pago</h1>
+                            <p id="precioPago"></p>
+                        </div>
                     </li>
 
                 </ul>
-            
             </form>
             <div class="pago-container">
                 <div class="pago">
@@ -66,11 +70,6 @@
         </div>
         
     </section>
-    
-    <div>
-        <h1>Procesar Pago</h1>
-        <p id="precioPago"></p>
-    </div>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
