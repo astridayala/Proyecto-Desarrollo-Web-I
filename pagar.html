@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago</title>
+</head>
+<body>
+
+    <h1>Procesar Pago</h1>
+    <p id="precioPago"></p>
+
+
+
+
+
+
+
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const precio = urlParams.get('precio');
+
+        document.getElementById('precioPago').textContent = `El precio a pagar es: $${precio}`;
+    </script>
+    
+</body>
+</html>
