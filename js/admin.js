@@ -36,3 +36,5 @@ document.getElementById('loginForm')?.addEventListener('submit', async function(
         alert("Ocurrió un error al intentar iniciar sesión. Por favor, intenta más tarde.");
     }
 });
+
+
