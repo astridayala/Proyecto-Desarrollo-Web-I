@@ -63,7 +63,6 @@ body{
 .box img:hover {
     transform: scale(1.1); 
 }
-/* Sección acerca */
 #acerca {
     margin-top: 50px; 
 }
@@ -81,7 +80,6 @@ body{
     font-weight: bold;
     background-color: var(--color2);
 }
-/* Sección info */
 #info {
     margin-top: 50px; 
 }
@@ -98,8 +96,6 @@ body{
     font-size: 1.5rem;
     font-weight: bold;
 }
-
-/* Sección características */
 #caracteristicas {
     margin-top: 50px; 
 }
