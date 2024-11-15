@@ -126,8 +126,6 @@ h5{
     margin-top: 10px;
     background-color: var(--rojo);
     color: var(--blanco); 
-    background-color: #e63946;
-    color: #fff; 
     border: none;
     border-radius: 10px;
     padding: 10px 12px;
@@ -143,8 +141,6 @@ h5{
 }    
 .comprar:hover {
     background-color: var(--rojo2); 
-
-    background-color: #d62839; 
     transform: scale(1.05); 
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }

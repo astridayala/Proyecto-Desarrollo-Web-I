@@ -152,7 +152,7 @@ img {
 }
 
 .modal-container {
-    display: none; /* Oculta el modal por defecto */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -162,4 +162,20 @@ img {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+}
+.producto{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: var(--gris-nuevo);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+}
+.producto:hover{
+    background-color: var(--gris); 
+    transform: scale(1.01); 
 }
