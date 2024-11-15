@@ -67,24 +67,11 @@ class AdminPanel {
         const contenedor = document.getElementById(elementoID);
         contenedor.innerHTML = listaProductos.map(producto => `
             <div class="producto">
-                <h4 class="producto-titulo" onclick="admin.mostrarDetalles('${producto.id}')">${producto.nombre}</h4>
-                <div id="detalles-${producto.id}" class="producto-detalles" style="display: none;">
-                    <h4>Descripción:</h4>
-                    <p>${producto.descripcion}</p>
-                    <h4>Precio:</h4>
-                    <p>${producto.precio}</p>
-                    <h4>Categoría:</h4>
-                    <p>${producto.categoria}</p>
-                    <img src="${producto.imagenURL}" alt="${producto.nombre}">
-                    ${tipo === 'pendiente' ? `
-                        <button class="button aprobar" onclick="admin.aprobarProducto('${producto.id}')">Aprobar</button>
-                        <button class="button rechazar" onclick="admin.rechazarProducto('${producto.id}')">Rechazar</button>
-                    ` : ''}
-                </div>
+                <h4 class="producto-titulo" onclick="admin.mostrarModal(${JSON.stringify(producto).replace(/"/g, '&quot;')})">${producto.nombre}</h4>
             </div>
         `).join('');
-        
     }
+    
 
     async aprobarProducto(id) {
         console.log("Intentando aprobar producto con ID:", id);
@@ -125,7 +112,31 @@ class AdminPanel {
         } catch (error) {
             console.error("Error al actualizar el producto en la base de datos:", error);
         }
-    }    
+    }
+    
+    mostrarModal(producto) {
+        // Llenar los datos del modal
+        document.getElementById('modal-producto-nombre').textContent = producto.nombre;
+        document.getElementById('modal-producto-vendedor').textContent = producto.idVendedor || 'N/A';
+        document.getElementById('modal-producto-descripcion').textContent = producto.descripcion;
+        document.getElementById('modal-producto-precio').textContent = producto.precio;
+        document.getElementById('modal-producto-categoria').textContent = producto.categoria;
+        document.getElementById('modal-producto-imagen').src = producto.imagenURL;
+        document.getElementById('modal-producto-imagen').alt = producto.nombre;
+    
+        // Configurar botones para aprobar y rechazar
+        document.getElementById('aprobar-btn').onclick = () => this.aprobarProducto(producto.id);
+        document.getElementById('rechazar-btn').onclick = () => this.rechazarProducto(producto.id);
+    
+        // Mostrar el modal
+        document.querySelector('.modal-container').style.display = 'flex';
+    }
+    
+
+    cerrarModal() {
+        document.querySelector('.modal-container').style.display = 'none';
+    }
+    
 }
 
 window.admin = new AdminPanel();
