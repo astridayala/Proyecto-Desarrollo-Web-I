@@ -21,6 +21,7 @@
     --colo2: #555;
     --rojo: #e63946;
     --color3: #ddd;
+    --color4: #ccc;
 }
 body {
     margin: 0;
@@ -31,7 +32,7 @@ body {
     min-height: 100vh;
 }
 .payment-form {
-    background-color: #fff;
+    background-color: var(--blanco);
     padding: 20px 30px;
     width: 100%;
     max-width: 400px;
@@ -59,7 +60,7 @@ body {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color4);
     border-radius: 5px;
 }
 
@@ -77,7 +78,7 @@ body {
     padding: 12px;
     font-size: 18px;
     font-weight: bold;
-    color: #fff;
+    color: var(--blanco);
     background-color: #007bff;
     border: none;
     border-radius: 5px;
