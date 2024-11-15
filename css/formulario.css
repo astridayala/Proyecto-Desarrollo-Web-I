@@ -129,3 +129,36 @@ footer h3{
     color: var(--blanco);
     font-size: 0.9em;
 }
+.pago-container{
+    display: flex;
+    justify-content: center;
+}
+.pago {
+    display: flex;
+    justify-content: center;
+}
+
+.pago ul {
+    display: flex;
+    justify-content: center; 
+    padding: 0;
+    list-style: none;
+}
+
+.pagarBTN {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--celeste-2);
+    color: var(--azul-3);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.pagarBTN h2{
+    color: var(--blanco);
+}
+.pagarBTN:hover {
+    background-color: var(--azul-1);
+}
