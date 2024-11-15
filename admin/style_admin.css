@@ -176,6 +176,9 @@ img {
     transition: background-color 0.3s ease, transform 0.2s ease;
 
 }
+.producto h4{
+    font-weight: 600;
+}
 .producto:hover{
     background-color: var(--gris); 
     transform: scale(1.01); 
