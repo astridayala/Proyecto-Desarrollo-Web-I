@@ -3,20 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Pago</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/cupon-estrella.png" type="image/x-icon">
+    <title>Pasarela de Pago</title>
 </head>
 <body>
+    <header id="header-container">
+        <a href="index.html"><img src="img/CM-Logo.png" alt="Logo-CM" id="logo"></a>
+        <nav id="pages">
+            <ul>
+                <li><button><a href="pages-user/comida.html"><i class="fas fa-utensils" id="icons"></i><h2>Comida</h2></a></button></li>
+                <li><button><a href="pages-user/belleza.html"><i class="fa-solid fa-spray-can-sparkles" id="icons"></i><h2>Belleza</h2></a></button></li>
+                <li><button><a href="pages-user/viajes.html"><i class="fa-solid fa-plane-departure" id="icons"></i><h2>Viajes</h2></a></button></li>
+                <li><button><a href="pages-user/salud.html"><i class="fa-solid fa-notes-medical" id="icons"></i><h2>Salud</h2></a></button></li>
+                <li><button><a href="pages-user/things.html"><i class="fa-solid fa-gift" id="icons"></i><h2>Things</h2></a></button></li>
+                <li><button><a href="pages-user/comofunciona.html"><i class="fa-solid fa-circle-info" id="icons"></i><h2>¿Cómo funciona?</h2></a></button></li>
+                <li><button><a href="pages-user/nosotros.html"><i class="fa-solid fa-users" id="icons"></i><h2>Nosotros</h2></a></button></li>
+                <li><button><a href="pages-user/perfil.html"><i class="fa-solid fa-user" id="icons"></i><h2>Mi Perfil</h2></a></button></li>
+                <li><button><a href="LogIn.html"><i class="fa-solid fa-right-from-bracket"></i><h2>Cerrar sesion</h2></a></button></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h1>Procesar Pago</h1>
-    <p id="precioPago"></p>
+    <section class="formulario">
 
+        <div class="head">
+            <h2>Pago con Tarjeta</h2>
+        </div>
+        <div class="logIn">
+            <form id="loginForm">
 
+                <ul>
+                    <li>
+                        <span class="inicio"><i class="fa-solid fa-user"></i></span>
+                        <input id="nombreTitular" type="text" required class="text" placeholder="Nombre del Titular">
+                    </li>
+                    <li>
+                        <span class="inicio"><i class="fa-solid fa-hashtag"></i></span>
+                        <input id="numeroTarjeta" type="number" required class="text" placeholder="Número de Tarjeta">
+                    </li>
+                    <li>
+                        <span class="inicio"><i class="fa-solid fa-calendar-check"></i></span>
+                        <input id="fechaExpiracion" type="calendar" required class="text" placeholder="Fecha de Expiración">
+                    </li>
+                    <li>
+                        <span class="inicio"><i class="fa-solid fa-key"></i></span>
+                        <input id="cvv" type="number" required class="text" placeholder="CVV">
+                    
+                    </li>
 
-
-
-
-
+                </ul>
+            
+            </form>
+            <div class="pago-container">
+                <div class="pago">
+                    <ul>
+                        <li><button type="submit" class="pagarBTN"><h2>Pagar Ahora</h2></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </section>
     
+    <div>
+        <h1>Procesar Pago</h1>
+        <p id="precioPago"></p>
+    </div>
+
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const precio = urlParams.get('precio');
