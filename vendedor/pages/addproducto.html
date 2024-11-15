@@ -40,7 +40,63 @@
             </form>
         </div>
     </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
+        // Configuración de Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyB68QDO-q8ngnF5Cz1cvkNJswDX4vGcs18",
+        authDomain: "proyecto-desarrollo-web-i.firebaseapp.com",
+        projectId: "proyecto-desarrollo-web-i",
+        storageBucket: "proyecto-desarrollo-web-i.appspot.com", // Corregido storageBucket
+        messagingSenderId: "922911576837",
+        appId: "1:922911576837:web:0a723db5841c12c1649d6c"
+    };
+
+        // Inicializamos Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const form = document.getElementById("productForm");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const nombre = document.getElementById("nombre_producto").value;
+            const descripcion = document.getElementById("descripcion_producto").value;
+            const precio = parseFloat(document.getElementById("precio_producto").value);
+            const categoria = document.getElementById("categoria_producto").value;
+            const imagenUrl = document.getElementById("imagen_url").value;
+
+            if (currentUser) {
+                try {
+                    await addDoc(collection(db, "productos"), {
+                        nombre: nombre,
+                        descripcion: descripcion,
+                        precio: precio,
+                        categoria: categoria,
+                        imagenURL: imagenUrl,
+                        fechaCreacion: serverTimestamp(),
+                        vendedorId: currentUser.uid, // ID del vendedor autenticado
+                        estado: "pendiente" // Estado inicial de aprobación
+                    });
+
+                    alert("Producto agregado exitosamente con estado 'pendiente'.");
+                    form.reset();
+                } catch (error) {
+                    console.error("Error al agregar el producto:", error);
+                    alert("Error: No se pudo agregar el producto.");
+                }
+            } else {
+                alert("Debes iniciar sesión para agregar productos.");
+            }
+        });
+
+    </script>
+    <script src="/js/cerrarSesion.js"></script>
 </body>
 
 <footer>
