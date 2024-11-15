@@ -1,0 +1,116 @@
+/* CONTENEDOR DE PRODUCTOS */
+#productosContainer {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 20px;
+    position: relative; /* Para que el botón se posicione dentro del contenedor */
+}
+
+/* BOTÓN DE MOSTRAR PRODUCTOS */
+#mostrar_producto {
+    position: absolute; /* Posiciona el botón en relación al contenedor */
+    top: 20px;
+    right: 20px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+#mostrar_producto:hover {
+    background-color: #0056b3;
+}
+
+/* TARJETA DE PRODUCTO */
+#productosContainer .producto-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+#productosContainer .producto-card:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen del producto */
+#productosContainer .producto-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Información del producto */
+#productosContainer .producto-info {
+    text-align: center;
+}
+
+#productosContainer .producto-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#productosContainer .producto-info p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+#productosContainer .producto-info p strong {
+    color: #007bff;
+}
+
+/* Botón de acción */
+#productosContainer .boton-accion {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#productosContainer .boton-accion:hover {
+    background-color: #0056b3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    #productosContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    #productosContainer {
+        grid-template-columns: 1fr;
+    }
+
+    #productosContainer .producto-info h3 {
+        font-size: 16px;
+    }
+
+    #productosContainer .producto-info p {
+        font-size: 12px;
+    }
+
+    #productosContainer .boton-accion {
+        font-size: 14px;
+    }
+}
