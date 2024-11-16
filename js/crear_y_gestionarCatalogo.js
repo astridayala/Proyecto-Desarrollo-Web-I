@@ -117,3 +117,4 @@ class ProductoCatalogo {
 }
 
 const catalogo = new ProductoCatalogo();
+    
