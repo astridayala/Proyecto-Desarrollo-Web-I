@@ -82,22 +82,37 @@ class ProductoCatalogo {
 
     async cargarProductos() {
         const catalogoContainer = document.getElementById('catalogo-productos');
-        catalogoContainer.innerHTML = ''; 
+        catalogoContainer.innerHTML = '';
 
-        const productosSnapshot = await getDocs(collection(db, 'productosEnEspera'));
-        this.productos = productosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        try {
+            const { sellerId } = await this.obtenerSellerId();
 
-        this.productos.forEach(producto => {
-            catalogoContainer.innerHTML += `
-                <div class="producto">
-                    <h4>${producto.nombre}</h4>
-                    <p>${producto.descripcion}</p>
-                    <span>$${producto.precio}</span>
-                    <img src="${producto.imagen}" alt="${producto.nombre}">
-                    <img src="${producto.urlLogo}" alt="Logo del Vendedor">
-                </div>
-            `;
-        });
+            // Filtrar productos que correspondan al vendedor autenticado
+            const productosSnapshot = await getDocs(
+                query(collection(db, 'productosEnEspera'), where('sellerId', '==', sellerId))
+            );
+
+            this.productos = productosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+            if (this.productos.length === 0) {
+                catalogoContainer.innerHTML = '<p>No hay productos para mostrar.</p>';
+            }
+
+            this.productos.forEach(producto => {
+                catalogoContainer.innerHTML += `
+                    <div class="producto">
+                        <h4>${producto.nombre}</h4>
+                        <p>${producto.descripcion}</p>
+                        <span>$${producto.precio}</span>
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                        <img src="${producto.urlLogo}" alt="Logo del Vendedor">
+                    </div>
+                `;
+            });
+        } catch (error) {
+            console.error('Error al cargar los productos:', error);
+            catalogoContainer.innerHTML = '<p>Error al cargar los productos. Intenta nuevamente.</p>';
+        }
     }
 }
 
