@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-:root{
+:root {
     --celeste-1: #234459;
     --celeste-2: #3C7499;
     --celeste-3: #5AAEE6;
     --celeste-4: #94C1FF;
     --azul: #1d3557;
+
     --azul-1: #012E40;
     --azul-3: #026773;
+
     --negro: #000;
     --gris-obscuro: #8c8c8c;
     --gris: #d9d9d9;
@@ -30,6 +32,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     background-color: var(--gris-nuevo);
+    font-family: 'Mulish', sans-serif;
 }
 
 .payment-form {
@@ -39,12 +42,18 @@ body {
     max-width: 400px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.payment-form:hover {
+    transform: translateY(-5px);
 }
 
 .payment-form h2 {
     margin-bottom: 15px;
-    font-size: 24px;
+    font-size: 1.5rem;
     text-align: center;
+    color: var(--azul);
     font-family: 'Montserrat Subrayada', sans-serif;
 }
 
@@ -65,13 +74,17 @@ body {
     font-size: 16px;
     border: 1px solid var(--color4);
     border-radius: 5px;
-    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--azul);
+    outline: none;
 }
 
 .form-row {
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
 }
 
 .form-row .form-group {
@@ -88,21 +101,23 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .payment-button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
     .payment-form {
-        padding: 15px;
+        padding: 20px;
+        max-width: 350px;
     }
 
     .payment-form h2 {
-        font-size: 20px;
+        font-size: 1.3rem;
     }
 
     .form-group input {
@@ -111,17 +126,17 @@ body {
 
     .payment-button {
         font-size: 16px;
-        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .payment-form {
-        padding: 10px;
+        padding: 15px;
+        max-width: 100%;
     }
 
     .payment-form h2 {
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 
     .form-group input {
