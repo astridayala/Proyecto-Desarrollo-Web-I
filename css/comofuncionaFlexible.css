@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
 
-:root{
+:root {
     --celeste-1: #234459;
     --celeste-2: #3C7499;
     --celeste-3: #5AAEE6;
@@ -15,6 +15,7 @@
     --blanco2: #F8F8F8;
     --blanco: #fff;
 }
+
 #dnl {
     margin-top: 70px;
     margin: 0 200px;
@@ -27,17 +28,40 @@
     font-family: Montserrat Subrayada;
     color: var(--azul-3);
 }
-#dnl p{
+
+#dnl p {
     margin: 16px 0px;
     font-size: 1.3em;
 }
-#dnl a{
+
+#dnl a {
     text-decoration: none;
     color: var(--celeste-3);
 }
-#dnl a:hover{
+
+#dnl a:hover {
     color: var(--azul-3);
 }
-footer{
+
+footer {
     margin-top: 75px;
+}
+
+/* Media Queries para móvil y tablet */
+@media (max-width: 768px) {
+    #dnl {
+        margin: 0 20px;
+    }
+
+    #dnl h2 {
+        font-size: 36px; /* Reduce el tamaño de la fuente para dispositivos más pequeños */
+    }
+
+    #dnl p {
+        font-size: 1.1em; /* Ajusta el tamaño del texto para una mejor lectura */
+    }
+
+    footer {
+        margin-top: 50px;
+    }
 }
