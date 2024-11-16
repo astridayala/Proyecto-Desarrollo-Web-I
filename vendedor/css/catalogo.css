@@ -39,9 +39,6 @@
     transition: transform 0.2s;
 }
 
-#productosContainer .producto-card:hover {
-    transform: scale(1.05);
-}
 
 /* Imagen del producto */
 #productosContainer .producto-img img {

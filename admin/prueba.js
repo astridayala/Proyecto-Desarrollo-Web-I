@@ -16,7 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Clase para manejar el panel de administración
 class AdminPanel {
     constructor() {
         this.productosPendientes = [];
@@ -31,9 +30,8 @@ class AdminPanel {
 
             querySnapshot.forEach((doc) => {
                 const producto = doc.data();
-                producto.id = doc.id; // Asignamos el ID del documento al objeto producto
+                producto.id = doc.id;
 
-                // Clasificamos los productos según su estado
                 if (producto.estado === 'pendiente') {
                     this.productosPendientes.push(producto);
                 } else if (producto.estado === 'aprobado') {
@@ -118,7 +116,6 @@ class AdminPanel {
         try {
             console.log("Abriendo modal para producto:", producto);
     
-            // Llenar los datos del modal con la información del producto
             document.getElementById('modal-producto-nombre').textContent = producto.nombre || 'Sin nombre';
             document.getElementById('modal-producto-descripcion').textContent = producto.descripcion || 'Sin descripción';
             document.getElementById('modal-producto-precio').textContent = producto.precio || '0.00';
@@ -126,7 +123,6 @@ class AdminPanel {
             document.getElementById('modal-producto-imagen').src = producto.imagenURL || '';
             document.getElementById('modal-producto-imagen').alt = producto.nombre || 'Imagen no disponible';
 
-            // Mostrar botones solo si el producto está en estado "pendiente"
             const botones = document.getElementById('botones-aprobacion');
             if (producto.estado === 'pendiente') {
                 botones.style.display = 'flex';
@@ -136,7 +132,6 @@ class AdminPanel {
                 botones.style.display = 'none';
             }
     
-            // Mostrar el modal
             document.querySelector('.modal-container').style.display = 'flex';
         } catch (error) {
             console.error("Error al mostrar el modal o al obtener datos del vendedor:", error);

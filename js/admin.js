@@ -31,10 +31,12 @@ document.getElementById('loginForm')?.addEventListener('submit', async function(
         } else {
             alert("Credenciales inválidas. Por favor, intenta de nuevo.");
         }
-    } catch (error) {
-        console.error("Error al verificar el administrador:", error);
+    }  catch (error) {
+        console.error("Error al verificar el administrador:", error.message);
+        console.error("Detalles:", error);
         alert("Ocurrió un error al intentar iniciar sesión. Por favor, intenta más tarde.");
     }
+
 });
 
 

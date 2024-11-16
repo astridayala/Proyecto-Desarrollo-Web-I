@@ -1,4 +1,3 @@
-// gestion-catalogo.js
 class ProductoCatalogo {
     constructor() {
         this.productos = [];
@@ -14,23 +13,50 @@ class ProductoCatalogo {
         this.cargarProductos();
     }
 
+    async obtenerSellerId() {
+        const auth = getAuth(); // Obtenemos el servicio de autenticación
+        const user = auth.currentUser; // Usuario autenticado
+
+        if (user) {
+            const sellerDoc = await getDoc(doc(db, 'sellers', user.uid));
+            if (sellerDoc.exists()) {
+                return { sellerId: user.uid, urlLogo: sellerDoc.data().urlLogo };
+            } else {
+                console.error('No se encontró un documento en la colección sellers para este usuario.');
+                throw new Error('No se pudo obtener el logo del vendedor.');
+            }
+        } else {
+            console.error('No hay un usuario autenticado.');
+            throw new Error('Debe iniciar sesión para agregar productos.');
+        }
+    }
+
     async guardarProducto(producto) {
-        // Verificar si hay una imagen para cargar en Firebase Storage
         let imagenURL = '';
+
+        // Verificar si hay una imagen para cargar en Firebase Storage
         if (producto.imagen) {
             const storageRef = ref(storage, `imagenes/${producto.imagen.name}`);
             const snapshot = await uploadBytes(storageRef, producto.imagen);
             imagenURL = await getDownloadURL(snapshot.ref);
         }
-    
-        // Crear el producto con la URL de la imagen
+
+        // Obtener el sellerId y la URL del logo automáticamente
+        const { sellerId, urlLogo } = await this.obtenerSellerId();
+
+        // Crear el producto con los datos completos
         const productoData = {
             nombre: producto.nombre,
             descripcion: producto.descripcion,
             precio: parseFloat(producto.precio),
             categoria: producto.categoria,
-            imagen: imagenURL
-        };    
+            imagen: imagenURL,
+            urlLogo: urlLogo,
+            sellerId: sellerId
+        };
+
+        // Guardar en Firestore
+        await addDoc(collection(db, 'productosEnEspera'), productoData);
     }
 
     async agregarProducto(e) {
@@ -50,29 +76,29 @@ class ProductoCatalogo {
             this.cargarProductos();
         } catch (error) {
             alert('Error al agregar el producto');
+            console.error(error);
         }
     }
 
     async cargarProductos() {
-    const catalogoContainer = document.getElementById('catalogo-productos');
-    catalogoContainer.innerHTML = ''; // Limpiar el contenido previo
+        const catalogoContainer = document.getElementById('catalogo-productos');
+        catalogoContainer.innerHTML = ''; 
 
-    // Obtener productos desde Firestore
-    const productosSnapshot = await getDocs(collection(db, 'productosEnEspera'));
-    this.productos = productosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        const productosSnapshot = await getDocs(collection(db, 'productosEnEspera'));
+        this.productos = productosSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-    // Mostrar productos en la interfaz
-    this.productos.forEach(producto => {
-        catalogoContainer.innerHTML += `
-            <div class="producto">
-                <h4>${producto.nombre}</h4>
-                <p>${producto.descripcion}</p>
-                <span>$${producto.precio}</span>
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-            </div>
-        `;
-    });
-}
+        this.productos.forEach(producto => {
+            catalogoContainer.innerHTML += `
+                <div class="producto">
+                    <h4>${producto.nombre}</h4>
+                    <p>${producto.descripcion}</p>
+                    <span>$${producto.precio}</span>
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <img src="${producto.urlLogo}" alt="Logo del Vendedor">
+                </div>
+            `;
+        });
+    }
 }
 
 const catalogo = new ProductoCatalogo();
